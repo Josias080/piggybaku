@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_06_04_093628) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_feelings_on_user_id"
   end
-
+  
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -45,4 +45,5 @@ ActiveRecord::Schema.define(version: 2018_06_04_093628) do
   end
 
   add_foreign_key "feelings", "users"
+
 end
