@@ -1,14 +1,10 @@
 <div class="container">
   <row>
-    <div class="text-right">
-      <button class="btn btn-primary" id="piggy-button"> Piggy </button>
+    <div class="col-xs-12 top-animal-area">
+      <%= image_tag 'title_img.png' %>
     </div>
   </row>
-  <row class="text-center">
-    <h2>PiggyBaku</h2>
+  <row>
+    <%= render "form", feeling: @feeling %>
   </row>
-  <row class="text-center">
-    <p>secret bank for sensitive people</p>
-  </row>
-  <%= render "form", feeling: @feeling %>
 </div>
