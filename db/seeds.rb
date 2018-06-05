@@ -134,6 +134,6 @@ test_user_data.each do |user|
   User.create!(user)
 end
 
-test_feelings_data do |feeling|
+test_feelings_data.each do |feeling|
   Feeling.create!(feeling)
 end
