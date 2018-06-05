@@ -2,12 +2,9 @@ class FeelingsController < ApplicationController
    skip_before_action :authenticate_user!, only: :new
    before_action :set_feeling, only: [ :show, :edit, :update, :destroy ]
 
-
   def index
-    if current_user
-      @positive_feelings = Feeling.all.where(is_positive: true).order(id: "DESC")
-      @negative_feelings = Feeling.all.where(is_positive: false).order(id: "DESC")
-    end
+      @positive_feelings = Feeling.all.where(user: current_user, is_positive: true).order(id: "DESC")
+      @negative_feelings = Feeling.all.where(user: current_user, is_positive: false).order(id: "DESC")
   end
 
   def show
