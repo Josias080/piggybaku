@@ -7,6 +7,7 @@ const piggy_form = document.getElementById("piggy-form");
 const baku_img = document.getElementById("baku-img");
 const hidden_field = document.getElementById("is_positive");
 const piggy_img = document.getElementById("piggy-img");
+const animal_img = document.querySelectorAll(".animal-img");
 
 piggy_button.addEventListener("click", (event) => {
   baku_form.classList.add("hidden");
@@ -27,3 +28,8 @@ baku_button.addEventListener("click", (event) => {
   baku_img.classList.remove("hidden");
   hidden_field.value = false;
 });
+
+
+// $(".toggle-area").click(function () {
+//   $(".toggle-area").toggleClass("hidden");
+// });
