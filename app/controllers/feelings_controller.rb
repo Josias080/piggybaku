@@ -4,7 +4,10 @@ class FeelingsController < ApplicationController
 
 
   def index
-    @feelings = Feeling.all.where(user: current_user).order(id: "DESC")
+    if current_user
+      @positive_feelings = Feeling.all.where(is_positive: true).order(id: "DESC")
+      @negative_feelings = Feeling.all.where(is_positive: false).order(id: "DESC")
+    end
   end
 
   def show
