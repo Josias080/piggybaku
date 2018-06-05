@@ -18,13 +18,8 @@
       <input type="text" name="feeling[price]" placeholder="how much will you give to remember?" >
     <% end %>
     <br>
+    <%= hidden_field_tag :is_positive, is_baku %>
 
-   <!--  <% if is_baku %>
-      <% params[:is_positive] = false %>
-    <% else %>
-      <% params[:is_positive] = true %>
-    <% end %>
- -->
     <input type="submit" class="btn btn-primary">
   </form>
 </div>

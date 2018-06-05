@@ -23,6 +23,7 @@ class FeelingsController < ApplicationController
   def create
     @feeling = Feeling.new(feeling_params)
     @feeling.user = current_user
+    binding.pry
     if @feeling.save
       redirect_to confirmation_feeling_path(@feeling)
     else
