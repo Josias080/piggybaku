@@ -13,6 +13,9 @@ class FeelingsController < ApplicationController
   def show
   end
 
+  def confirmation
+  end
+
   def new
     @feeling = Feeling.new
   end
