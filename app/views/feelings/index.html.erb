@@ -1,3 +1,6 @@
-<% @feelings.each do |feeling| %>
+<% @positive_feelings.each do |feeling| %>
+  <%= feeling.content %>
+<% end %>
+<% @negative_feelings.each do |feeling| %>
   <%= feeling.content %>
 <% end %>
