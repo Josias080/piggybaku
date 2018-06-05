@@ -1,14 +1,8 @@
 <div class="top-container">
-  <div class="text-right">
-    <button class="btn btn-primary" id="piggy-button"> Piggy </button>
-  </div>
-  <div class="text-right">
-    <button class="btn btn-primary hidden" id="baku-button"> Baku </button>
-  </div>
-
   <h1 class="logo-container"><%= image_tag 'title_img.png' %></h1>
   <div class="animal-container">
-    <%= image_tag 'baku.png' %>
+    <div class="animal-img hidden" id="piggy-img"><%= image_tag 'pig.png' %></div>
+    <div class="animal-img" id="baku-img"><%= image_tag 'baku.png' %></div>
   </div>
 </div>
 <div class="form-container">
