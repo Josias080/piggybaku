@@ -10,27 +10,27 @@ test_user_data = [
   {
     username: 'Kim',
     email: 'kim@example.com',
-    password: 'password',
+    password: 'password'
   },
   {
     username: 'John',
     email: 'john@example.com',
-    password: 'password',
+    password: 'password'
   },
   {
     username: 'Mary',
     email: 'mary@example.com',
-    password: 'password',
+    password: 'password'
   },
   {
     username: 'Jack',
     email: 'jack@example.com',
-    password: 'password',
+    password: 'password'
   },
   {
     username: 'Jane',
     email: 'jane@example.com',
-    password: 'password',
+    password: 'password'
   }
 ]
 
@@ -127,13 +127,13 @@ test_feelings_data = [
   },
 ]
 
-User.destroy_all
 Feeling.destroy_all
+User.destroy_all
 
 test_user_data.each do |user|
   User.create!(user)
 end
 
-test_feelings_data do |feeling|
+test_feelings_data.each do |feeling|
   Feeling.create!(feeling)
 end
