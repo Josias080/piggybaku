@@ -1,3 +1,16 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "feelingsnew";
+
+.wrapper {
+  margin: 0 auto;
+  width: 960px;
+  height: 100vh;
+  background: $light-gray;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+  }
+}
