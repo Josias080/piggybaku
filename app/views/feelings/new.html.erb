@@ -1,10 +1,9 @@
-<!-- <div class="container">
-  <row>
-    <div class="col-xs-12 top-animal-area"> -->
-    <div>
-      <%= image_tag 'title_img.png' %>
-    </div>
-
+<div class="top-container">
+  <h1 class="logo-container"><%= image_tag 'title_img.png' %></h1>
+  <div class="animal-container">
+    <%= image_tag 'baku.png' %>
+  </div>
+</div>
+<div class="form-container">
     <%= render "form", feeling: @feeling %>
-
 </div>
