@@ -10,5 +10,6 @@
   <row class="text-center">
     <p>secret bank for sensitive people</p>
   </row>
-  <%= render "form", feeling: @feeling %>
+  <%= render partial: "form", locals: { feeling: @feeling, is_baku: true } %>
+  <%= render partial: "form", locals: { feeling: @feeling, is_baku: false } %>
 </div>

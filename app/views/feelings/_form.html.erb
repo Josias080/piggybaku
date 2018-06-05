@@ -1,18 +1,30 @@
-<div class="form-container text-center">
+<div class="form-container text-center" id="baku_form">
   <form action="/feelings" method="post">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <i class="fas fa-pencil-alt"></i><input type="text" name="feeling[content]" placeholder="what do you want to forget?" ><br>
-    <i class="fas fa-yen-sign"></i><input type="text" name="feeling[price]" placeholder="how much would you pay to forget?"><br>
+    <i class="fas fa-pencil-alt"></i>
+
+    <% if is_baku %>
+      <input type="text" name="feeling[content]" placeholder="what do you want to forget?" >
+    <% else %>
+      <input type="text" name="feeling[content]" placeholder="what do you want to remember?" >
+    <% end %>
+    <br>
+
+    <i class="fas fa-yen-sign"></i>
+
+    <% if is_baku %>
+      <input type="text" name="feeling[price]" placeholder="how much would you pay to forget?" >
+    <% else %>
+      <input type="text" name="feeling[price]" placeholder="how much will you give to remember?" >
+    <% end %>
+    <br>
+
+   <!--  <% if is_baku %>
+      <% params[:is_positive] = false %>
+    <% else %>
+      <% params[:is_positive] = true %>
+    <% end %>
+ -->
     <input type="submit" class="btn btn-primary">
   </form>
 </div>
-
-
-
-  <!--
-  <%= simple_form_for(@feeling) do |f| %>
-    <i class="fas fa-pencil-alt"></i><%= f.input :content, label: "", placeholder: "what do you want to forget?", class: "form-control-static" %>
-    <i class="fas fa-yen-sign"></i>
-    <%= f.input :price, placeholder: "how much would you pay to forget?" %>
-    <%= f.submit "submit", class: "btn btn-primary" %>
-  <% end %> -->
