@@ -7,6 +7,8 @@
   width: 960px;
   height: 100vh;
   background: $light-gray;
+  outline: 2px dotted #fff;
+  outline-offset: -5px;
 }
 
 @media (max-width: 600px) {
