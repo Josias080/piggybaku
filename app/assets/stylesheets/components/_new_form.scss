@@ -1,0 +1,20 @@
+.form-container {
+  padding: 20px;
+}
+.form-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  margin: 0 5% 3%;
+  .text-area {
+    width: 90%;
+  }
+  .price-area {
+    width: 30%;
+  }
+    .fas {
+    color: gray;
+    margin-right: 10px;
+  }
+}
