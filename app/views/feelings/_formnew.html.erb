@@ -1,0 +1,20 @@
+<% if is_baku %>
+
+  <%= simple_form_for @feeling do |f| %>
+    <%= f.input :content %>
+    <%= f.input :price_cents %>
+    <%= f.input :is_positive, as: :hidden %>
+
+    <%= f.button :submit, "Forget!", class: "btn btn-warning btn-block"%>
+  <% end %>
+
+<% else %>
+
+  <%= simple_form_for @feeling do |f| %>
+    <%= f.input :content %>
+    <%= f.input :price_cents %>
+    <%= f.input :is_positive, as: :hidden %>
+
+    <%= f.button :submit, "Store", class: "btn btn-warning btn-block"%>
+  <% end %>
+<% end %>
