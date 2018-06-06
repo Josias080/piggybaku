@@ -1,17 +1,14 @@
-<div class="form-container text-center">
+<!-- <div class="form-container text-center">
   <form action="">
     <i class="fas fa-pencil-alt"></i><input type="text" name="content" placeholder="what do you want to forget?" ><br>
     <i class="fas fa-yen-sign"></i><input type="text" name="price" placeholder="how much would you pay to forget?"><br>
     <input type="submit" value="Submit" class="btn btn-primary">
   </form>
-</div>
+</div> -->
 
-
-
-  <!--
   <%= simple_form_for(@feeling) do |f| %>
     <i class="fas fa-pencil-alt"></i><%= f.input :content, label: "", placeholder: "what do you want to forget?", class: "form-control-static" %>
     <i class="fas fa-yen-sign"></i>
     <%= f.input :price, placeholder: "how much would you pay to forget?" %>
     <%= f.submit "submit", class: "btn btn-primary" %>
-  <% end %> -->
+  <% end %>

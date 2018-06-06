@@ -8,10 +8,22 @@
 
     <% if user_signed_in? %>
 
+      Logged in as <strong><%= current_or_guest_user.username %></strong> |
+
+      <% if guest_user? %>
+        <%= link_to "Become a member", new_user_registration_path %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      <% else %>
+        <%= link_to "Change Profile", edit_user_registration_path %> |
+
       <!-- Links when logged in -->
       <%= link_to destroy_user_session_path, method: :delete do %>
         <%= t(".sign_out", default: "Log out") %>
       <% end %>
+    <% end %>
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
