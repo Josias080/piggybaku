@@ -1,8 +1,6 @@
 <div class="form-container text-center" id="baku_form">
   <form action="/feelings" method="post">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-
       <% if is_baku %><!-- baku -->
         <h3 class="font-round-title">what do you want to <span class="font-red">forget?</span></h3>
         <div class="form-group">
@@ -15,10 +13,11 @@
         <div class="form-group">
           <i class="fas fa-yen-sign"></i>
           <div class="price-area">
-              <input type="text" name="feeling[price]" placeholder="100" class="form-control">
+              <input type="text" name="feeling[price_cents]" placeholder="100" class="form-control">
           </div>
         </div>
         <input type="submit" class="font-round-title btn btn-blue" value="forget!">
+
 
       <% else %><!-- pig -->
         <h3 class="font-round-title">what do you want to <span class="font-red">remember?</span></h3>
@@ -32,12 +31,12 @@
         <div class="form-group">
           <i class="fas fa-yen-sign"></i>
           <div class="price-area">
-              <input type="text" name="feeling[price]" placeholder="100" class="form-control">
+              <input type="text" name="feeling[price_cents]" placeholder="100" class="form-control">
           </div>
         </div>
       <input type="submit" class="font-round-title btn btn-pink" value="remember!">
       <% end %>
       <%= hidden_field_tag :is_positive, is_baku %>
-
     </form>
 </div>
+
