@@ -1,10 +1,12 @@
 class FeelingsController < ApplicationController
-   skip_before_action :authenticate_user!, only: :new
+   skip_before_action :authenticate_user!, only: [ :new, :create ]
    before_action :set_feeling, only: [ :show, :edit, :update, :destroy ]
 
   def index
-      @positive_feelings = Feeling.all.where(user: current_user, is_positive: true).order(id: "DESC")
-      @negative_feelings = Feeling.all.where(user: current_user, is_positive: false).order(id: "DESC")
+    # if current_or_guest_user
+      # @positive_feelings = current_or_guest_user.feelings.where(user: current_user, is_positive: true).order(id: "DESC")
+    @negative_feelings = Feeling.where(user: current_or_guest_user, is_positive: false).order(id: "DESC")
+    # end
   end
 
   def show
@@ -19,7 +21,7 @@ class FeelingsController < ApplicationController
 
   def create
     @feeling = Feeling.new(feeling_params)
-    @feeling.user = current_user
+    @feeling.user = current_or_guest_user
     if @feeling.save
       redirect_to confirmation_feeling_path(@feeling)
     else
