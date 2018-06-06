@@ -5,7 +5,9 @@ Rails.application.routes.draw do
       }
   root to: 'feelings#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :feelings
-  # root to: 'welcome#index'
-  # post 'welcome/guest' => 'welcome#guest'
+  resources :feelings do
+    member do
+      get 'confirmation'
+    end
+  end
 end

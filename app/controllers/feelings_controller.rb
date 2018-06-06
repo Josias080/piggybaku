@@ -12,6 +12,9 @@ class FeelingsController < ApplicationController
   def show
   end
 
+  def confirmation
+  end
+
   def new
     @feeling = Feeling.new
   end
@@ -20,7 +23,7 @@ class FeelingsController < ApplicationController
     @feeling = Feeling.new(feeling_params)
     @feeling.user = current_or_guest_user
     if @feeling.save
-      redirect_to feeling_path(@feeling)
+      redirect_to confirmation_feeling_path(@feeling)
     else
       render :new
     end
