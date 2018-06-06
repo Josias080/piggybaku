@@ -1,6 +1,6 @@
 class FeelingsController < ApplicationController
    skip_before_action :authenticate_user!, only: [ :new, :create ]
-   before_action :set_feeling, only: [ :show, :edit, :update, :destroy ]
+   before_action :set_feeling, only: [ :show, :confirmation, :edit, :update, :destroy ]
 
   def index
     # if current_or_guest_user
