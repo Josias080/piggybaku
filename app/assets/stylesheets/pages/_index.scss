@@ -1,6 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "feelingsnew";
+@import "confirmation";
+
+ul li {
+  list-style: none;
+}
 
 .wrapper {
   margin: 0 auto;
