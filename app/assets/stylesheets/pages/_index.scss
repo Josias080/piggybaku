@@ -11,6 +11,11 @@
   outline-offset: -5px;
 }
 
+.alert {
+  border: none;
+  border-radius: 0;
+}
+
 @media (max-width: 600px) {
   .wrapper {
     width: 100%;
