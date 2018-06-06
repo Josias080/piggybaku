@@ -1,24 +1,15 @@
-<div class="container">
-  <row>
-    <div class="text-right">
-      <button class="btn btn-primary" id="piggy-button"> Piggy </button>
-    </div>
-  </row>
-  <row>
-    <div class="text-right">
-      <button class="btn btn-primary hidden" id="baku-button"> Baku </button>
-    </div>
-  </row>
-  <row class="text-center">
-    <h2>PiggyBaku</h2>
-  </row>
-  <row class="text-center">
-    <p>secret bank for sensitive people</p>
-  </row>
-  <div id="baku-form">
+<div class="top-container">
+  <h1 class="logo-container"><%= image_tag 'title_img.png' %></h1>
+  <div class="animal-container">
+    <div class="toggle-area" id="baku-img"><%= image_tag 'baku.png' %></div>
+    <div class="toggle-area hidden" id="piggy-img"><%= image_tag 'pig.png' %></div>
+  </div>
+</div>
+<div class="form-container">
+  <div id="baku-form" class="toggle-area">
     <%= render partial: "form", locals: { feeling: @feeling, is_baku: true } %>
   </div>
-  <div class="hidden" id="piggy-form">
+  <div class="hidden toggle-area" id="piggy-form">
    <%= render partial: "form", locals: { feeling: @feeling, is_baku: false } %>
-  </div>
+ </div>
 </div>

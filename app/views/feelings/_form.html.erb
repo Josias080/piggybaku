@@ -1,23 +1,29 @@
 <div class="form-container text-center" id="baku_form">
   <form action="/feelings" method="post">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <i class="fas fa-pencil-alt"></i>
 
-    <% if is_baku %>
-      <input type="text" name="feeling[content]" placeholder="what do you want to forget?" >
-    <% else %>
-      <input type="text" name="feeling[content]" placeholder="what do you want to remember?" >
-    <% end %>
-    <br>
+    <div class="form-group">
+      <i class="fas fa-pencil-alt"></i>
+      <div class="text-area">
+        <% if is_baku %>
+          <input type="text" name="feeling[content]" placeholder="what do you want to forget?" class="form-control">
+        <% else %>
+          <input type="text" name="feeling[content]" placeholder="what do you want to remember?"  class="form-control">
+        <% end %>
+      </div>
+    </div>
 
-    <i class="fas fa-yen-sign"></i>
+    <div class="form-group">
+      <i class="fas fa-yen-sign"></i>
+      <div class="price-area">
+        <% if is_baku %>
+          <input type="text" name="feeling[price]" placeholder="how much would you pay to forget?" class="form-control">
+        <% else %>
+          <input type="text" name="feeling[price]" placeholder="how much will you give to remember?" class="form-control">
+        <% end %>
+      </div>
+    </div>
 
-    <% if is_baku %>
-      <input type="text" name="feeling[price]" placeholder="how much would you pay to forget?" >
-    <% else %>
-      <input type="text" name="feeling[price]" placeholder="how much will you give to remember?" >
-    <% end %>
-    <br>
     <%= hidden_field_tag :is_positive, is_baku %>
 
     <input type="submit" class="btn btn-primary">
