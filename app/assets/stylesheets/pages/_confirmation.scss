@@ -1,0 +1,51 @@
+.action-name-confirmation {
+  .toggle-animal-btn-container {
+    display: none;
+  }
+  .title-confirmation {
+  color : #fff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.25;
+  }
+  .top-container {
+    margin-bottom: 120px;
+  }
+  .bottom-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    .notice-container {
+      margin-top: 20px;
+      padding: 0 50px;
+      ul {
+      flex-direction: column;
+      justify-content: center;
+        li {
+          color: #808080;
+          height: 60px;
+          font-size: 21px;
+          padding-left: 10px;
+          text-indent: -10px;
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .action-name-confirmation {
+    .bottom-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      .notice-container {
+        padding: 0;
+      }
+    }
+  }
+}
+
