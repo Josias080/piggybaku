@@ -1,0 +1,19 @@
+.btn:hover {
+  opacity: 0.7;
+}
+.btn.font-round-title {
+  color: #fff;
+}
+.btn-pink {
+  background: $pink;
+}
+.btn-blue {
+  background: $blue;
+}
+
+.controller-name-feelings {
+  .btn {
+    width: 60%;
+    margin-top: 20px;
+  }
+}

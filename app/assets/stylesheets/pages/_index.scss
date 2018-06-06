@@ -16,6 +16,15 @@
   border-radius: 0;
 }
 
+.font-round-title {
+  font-family: "Arial Rounded MT Bold";
+  font-size: 22px;
+  color: $gray;
+  .font-red {
+    color: $red;
+  }
+}
+
 @media (max-width: 600px) {
   .wrapper {
     width: 100%;

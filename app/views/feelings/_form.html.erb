@@ -2,30 +2,42 @@
   <form action="/feelings" method="post">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-    <div class="form-group">
-      <i class="fas fa-pencil-alt"></i>
-      <div class="text-area">
-        <% if is_baku %>
-          <input type="text" name="feeling[content]" placeholder="what do you want to forget?" class="form-control">
-        <% else %>
-          <input type="text" name="feeling[content]" placeholder="what do you want to remember?"  class="form-control">
-        <% end %>
-      </div>
-    </div>
 
-    <div class="form-group">
-      <i class="fas fa-yen-sign"></i>
-      <div class="price-area">
-        <% if is_baku %>
-          <input type="text" name="feeling[price]" placeholder="how much would you pay to forget?" class="form-control">
-        <% else %>
-          <input type="text" name="feeling[price]" placeholder="how much will you give to remember?" class="form-control">
-        <% end %>
-      </div>
-    </div>
+      <% if is_baku %><!-- baku -->
+        <h3 class="font-round-title">what do you want to <span class="font-red">forget?</span></h3>
+        <div class="form-group">
+          <i class="fas fa-pencil-alt"></i>
+          <div class="text-area">
+              <input type="text" name="feeling[content]" placeholder="thought you want to let go" class="form-control">
+          </div>
+        </div>
+        <h3 class="font-round-title">set a <span class="font-red">price</span> for your thought</h3>
+        <div class="form-group">
+          <i class="fas fa-yen-sign"></i>
+          <div class="price-area">
+              <input type="text" name="feeling[price]" placeholder="100" class="form-control">
+          </div>
+        </div>
+        <input type="submit" class="font-round-title btn btn-blue" value="forget!">
 
-    <%= hidden_field_tag :is_positive, is_baku %>
+      <% else %><!-- pig -->
+        <h3 class="font-round-title">what do you want to <span class="font-red">remember?</span></h3>
+        <div class="form-group">
+          <i class="fas fa-pencil-alt"></i>
+          <div class="text-area">
+              <input type="text" name="feeling[content]" placeholder="thought you want to remember"  class="form-control">
+          </div>
+        </div>
+        <h3 class="font-round-title">set a <span class="font-red">price</span> for your thought</h3>
+        <div class="form-group">
+          <i class="fas fa-yen-sign"></i>
+          <div class="price-area">
+              <input type="text" name="feeling[price]" placeholder="100" class="form-control">
+          </div>
+        </div>
+      <input type="submit" class="font-round-title btn btn-pink" value="remember!">
+      <% end %>
+      <%= hidden_field_tag :is_positive, is_baku %>
 
-    <input type="submit" class="btn btn-primary">
-  </form>
+    </form>
 </div>
