@@ -2,7 +2,7 @@
   <div class="top-container" id="pig-confirmation">
     <h2 class="title-confirmation">Yay!<br>your memory has stored!</h2>
     <div class="animal-container">
-      <div class="toggle-area" id="pig-img"><%= image_tag 'pig.png' %></div>
+      <div id="pig-img"><%= image_tag 'pig.png' %></div>
     </div>
   </div>
   <div class="bottom-container">
@@ -14,14 +14,14 @@
     </div>
     <div class="linkarea-container linkarea-container text-center">
       <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
-      <%= link_to 'bank activity', feeling_path, class: "font-round-title btn btn-blue" %>
+      <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
     </div>
   </div>
 <% else %><!-- baku -->
   <div class="top-container" id="baku-confirmation">
-    <h2 class="title-confirmation">Yay!<br>your memory has stored!</h2>
+    <h2 class="title-confirmation">Yay!<br>Baku has eaten your thought!</h2>
     <div class="animal-container">
-      <div class="toggle-area" id="baku-img"><%= image_tag 'baku.png' %></div>
+      <div id="baku-img"><%= image_tag 'baku.png' %></div>
     </div>
   </div>
   <div class="bottom-container">
@@ -33,7 +33,7 @@
     </div>
     <div class="linkarea-container linkarea-container text-center">
       <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
-      <%= link_to 'bank activity', feeling_path, class: "font-round-title btn btn-blue" %>
+      <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
     </div>
   </div>
 <% end %>
