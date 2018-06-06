@@ -1,6 +1,8 @@
 <% @positive_feelings.each do |feeling| %>
   <%= feeling.content %>
 <% end %>
-<% @negative_feelings.each do |feeling| %>
-  <%= feeling.content %>
-<% end %>
+
+
+
+
+<%= render partial: "shared/messagesnegative", feeling: @feelings %>
