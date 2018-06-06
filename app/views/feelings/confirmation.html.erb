@@ -1,5 +1,39 @@
-<h2> Confirmation animation here </h2>
-
-<%= link_to 'My Page', feelings_path, class: "btn btn-secondary btn-lg" %>
-
-<%= link_to 'Back to Home Page', root_path, class: "btn btn-secondary btn-lg" %>
+<% if @feeling.is_positive %><!-- pig -->
+  <div class="top-container" id="pig-confirmation">
+    <h2 class="title-confirmation">Yay!<br>your memory has stored!</h2>
+    <div class="animal-container">
+      <div class="toggle-area" id="pig-img"><%= image_tag 'pig.png' %></div>
+    </div>
+  </div>
+  <div class="bottom-container">
+    <div class="notice-container">
+      <ul>
+        <li><i class="fas fa-check-circle"></i>Your thought and price is stored.</li>
+        <li><i class="fas fa-smile"></i>We suggest you to put *¥500* into your piggybank.</li>
+      </ul>
+    </div>
+    <div class="linkarea-container linkarea-container text-center">
+      <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
+      <%= link_to 'bank activity', feeling_path, class: "font-round-title btn btn-blue" %>
+    </div>
+  </div>
+<% else %><!-- baku -->
+  <div class="top-container" id="baku-confirmation">
+    <h2 class="title-confirmation">Yay!<br>your memory has stored!</h2>
+    <div class="animal-container">
+      <div class="toggle-area" id="baku-img"><%= image_tag 'baku.png' %></div>
+    </div>
+  </div>
+  <div class="bottom-container">
+    <div class="notice-container">
+      <ul>
+        <li><i class="fas fa-check-circle"></i>Your thought and price is stored.</li>
+        <li><i class="fas fa-smile"></i>We suggest you to put *¥500* into your piggybank.</li>
+      </ul>
+    </div>
+    <div class="linkarea-container linkarea-container text-center">
+      <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
+      <%= link_to 'bank activity', feeling_path, class: "font-round-title btn btn-blue" %>
+    </div>
+  </div>
+<% end %>

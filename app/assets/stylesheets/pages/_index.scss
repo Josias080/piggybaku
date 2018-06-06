@@ -1,6 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "feelingsnew";
+@import "confirmation";
+
+ul li {
+  list-style: none;
+}
 
 .wrapper {
   margin: 0 auto;
@@ -20,6 +25,8 @@
   font-family: "Arial Rounded MT Bold";
   font-size: 22px;
   color: $gray;
+  line-height: 1.5;
+  margin-top: 0;
   .font-red {
     color: $red;
   }
