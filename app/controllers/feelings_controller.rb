@@ -5,7 +5,7 @@ class FeelingsController < ApplicationController
   def index
     # if current_or_guest_user
       # @positive_feelings = current_or_guest_user.feelings.where(user: current_user, is_positive: true).order(id: "DESC")
-    @feelings = Feeling.where(user: current_or_guest_user, is_positive: false).order(id: "DESC")
+    @feelings = Feeling.where(user: current_or_guest_user).order(id: "DESC")
     # end
   end
 
