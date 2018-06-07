@@ -9,8 +9,8 @@ ul li {
 }
 
 .wrapper {
-  margin: 0 auto;
-  width: 960px;
+  // margin: 0 auto;
+  // width: 960px;
   padding-bottom: 30px;
   background: $light-gray;
   outline: 2px dotted #fff;
@@ -30,11 +30,5 @@ ul li {
   margin-top: 0;
   .font-red {
     color: $red;
-  }
-}
-
-@media (max-width: 768px) {
-  .wrapper {
-    width: 100%;
   }
 }

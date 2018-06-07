@@ -1,4 +1,10 @@
+#nav-drawer {
+  position:relative;
+}
 .toggle-animal-btn-container {
+  position: absolute;
+  right: 10px;
+  top: 10px;
     .hidden {
     visibility: hidden;
   }
