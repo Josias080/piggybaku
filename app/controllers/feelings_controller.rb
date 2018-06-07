@@ -44,7 +44,7 @@ class FeelingsController < ApplicationController
 
   def destroy
     @feeling.destroy
-    redirect_to root_path
+    redirect_to feelings_path
   end
 
   private
