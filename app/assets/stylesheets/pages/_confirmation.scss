@@ -7,18 +7,20 @@
   font-weight: bold;
   text-align: center;
   line-height: 1.25;
+  margin-top: 0;
   }
   .top-container {
     margin-bottom: 120px;
+    height: 300px;
   }
   .bottom-container {
     width: 600px;
     margin: 0 auto;
     padding: 0 20px;
     .notice-container {
-      margin-top: 20px;
-      padding: 0 50px;
+      margin: 30px 0;
       ul {
+      margin: 0;
       flex-direction: column;
       justify-content: center;
         li {
@@ -36,8 +38,12 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .action-name-confirmation {
+    .top-container {
+      height: 280px;
+      margin-bottom: 80px;
+    }
     .bottom-container {
       width: 100%;
       margin: 0;
