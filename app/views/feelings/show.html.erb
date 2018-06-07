@@ -1,6 +1,38 @@
 
 <% if @feeling.user == current_or_guest_user %>
-  <%= @feeling.content %>
+
+
+
+<div class="container">
+  <div class="row">
+
+      <div class="product">
+        <div class='product-upvote'>
+          <div class="product-arrow"></div>
+          <div class='product-count'>*</div>
+        </div>
+        <div class='product-body'>
+          <h3> My Message : <%= @feeling.content %> </h3>
+          <p><%= @feeling.price_cents %></p>
+        </div>
+         <div class="col-xs-3">
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+          <li>
+            <%= link_to edit_feeling_path(@feeling) do %>
+              <i class="far fa-edit"></i>
+              <% end %>
+          </li>
+          <li>
+            <%= link_to feeling_path(@feeling), method: :delete do %>
+             <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <% else %>
   <h3>Sorry, you're not the owner of the feeling.</h3>
 <% end %>

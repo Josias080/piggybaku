@@ -1,0 +1,14 @@
+<div class="text-center">
+  <h2> Edit</h2>
+</div>
+<div class="container">
+  <div class="row form-area">
+    <div class="form-row">
+      <% if @feeling.is_positive %>
+      <%= render "formnew", feeling: @feeling, is_baku: false %>
+      <% else %>
+      <%= render "formnew", feeling: @feeling, is_baku: true %>
+      <% end %>
+    </div>
+  </div>
+</div>
