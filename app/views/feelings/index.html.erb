@@ -2,13 +2,17 @@
   <div class="row">
       <div class="col-xs-6 col-sm-6">
         <div class="card">
-          <%= image_tag 'baku.png' %>
+          <% @negative_count.times do  %>
+            <%= image_tag 'baku_icon.png' %>
+          <% end %>
           <div class="card-description">
             <h1><%= @negative_count %></h1>
           </div>
         </div>
         <div class="card">
-          <%= image_tag 'pig.png' %>
+          <% @positive_count.times do  %>
+            <%= image_tag 'pig_icon.png' %>
+          <% end %>
           <div class="card-description">
             <h1><%= @positive_count %></h1>
           </div>
@@ -17,14 +21,13 @@
   </div>
 </div>
 
-<div class="container">
-  <div>
-    <% @negative_count.times do  %>
-      <%= image_tag 'baku.png' %>
-    <% end %>
-  </div>
-</div>
-
-
 
 <%= render partial: "shared/messages", feeling: @feelings %>
+
+<div class="total-money text-right">
+  <% @sum = 0 %>
+  <% @feelings.each do |feeling| %>
+    <% @sum += feeling.price_cents %>
+  <% end %>
+  <p> Total: ¥<%= @sum %> </p>
+</div>
