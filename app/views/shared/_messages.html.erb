@@ -10,13 +10,13 @@
     <div class="message-body">
     <% if feeling.is_positive %>
 
-      <p><strong> remember </strong>  <i class="fas fa-hand-holding-heart"></i> </p>
+      <p><strong> remember </strong><i class="fas fa-hand-holding-heart"></i></p>
       <p>
         <%= feeling.content %>
       </p>
       <% else %>
 
-      <p><strong> forget </strong>  <i class="fas fa-hand-holding-heart"></i> </p>
+      <p><strong> forget </strong></p>
       <p>
         ******************
       </p>
@@ -24,7 +24,7 @@
     </div>
     <div class="message-status">
       <p class="status">icon</p>
-      <p class="price"> <i class="fas fa-eye"></i> ¥ <%= feeling.price_cents %></p>
+      <p class="price"><i class="fas fa-eye"></i> ¥ <%= feeling.price_cents %></p>
     </div>
   </div>
   <% end %>
