@@ -15,6 +15,7 @@ class FeelingsController < ApplicationController
   end
 
   def confirmation
+    @price = @feeling.price
   end
 
   def new
