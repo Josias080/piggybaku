@@ -1,32 +1,30 @@
 
 <% @feelings.each do |feeling| %>
   <%= link_to feeling_path(feeling) do %>
-
-  <div class="message">
-    <div class="message-name">
-      <h3><%= feeling.created_at.strftime("%d %b %Y") %></h3>
-      <p> </p>
+    <div class="record">
+      <div class="record-date">
+        <%= feeling.created_at.strftime("%d %b %Y") %>
+      </div>
+      <div class="record-body">
+        <% if feeling.is_positive %>
+          <p class="status"><span class="flag font-round-title stored">stored</span></p>
+          <p class="thought"><%= feeling.content %></p>
+        <% else %>
+          <p class="status"><span class="flag font-round-title forgot">forgot</span></p>
+          <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
+        <% end %>
+      </div>
+      <div class="record-status">
+        <p class="price">¥<%= feeling.price_cents %></p>
+      </div>
+      <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
     </div>
-    <div class="message-body">
-    <% if feeling.is_positive %>
-
-      <p><strong> remember </strong><i class="fas fa-hand-holding-heart"></i></p>
-      <p>
-        <%= feeling.content %>
-      </p>
-      <% else %>
-
-      <p><strong> forget </strong></p>
-      <p>
-        ******************
-      </p>
-      <% end %>
-    </div>
-    <div class="message-status">
-      <p class="status">icon</p>
-      <p class="price"><i class="fas fa-eye"></i> ¥ <%= feeling.price_cents %></p>
-    </div>
-  </div>
   <% end %>
 <% end%>
-
+<div class="total-money text-right">
+  <% @sum = 0 %>
+  <% @feelings.each do |feeling| %>
+    <% @sum += feeling.price_cents %>
+  <% end %>
+  <p class="font-round-title">Total: ¥<%= @sum %></p>
+</div>
