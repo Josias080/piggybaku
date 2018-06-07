@@ -7,6 +7,8 @@ class FeelingsController < ApplicationController
       # @positive_feelings = current_or_guest_user.feelings.where(user: current_user, is_positive: true).order(id: "DESC")
     @feelings = Feeling.where(user: current_or_guest_user).order(id: "DESC")
     # end
+    @negative_count = Feeling.where(user: current_or_guest_user, is_positive: false).count
+    @positive_count = Feeling.where(user: current_or_guest_user, is_positive: true).count
   end
 
   def show
