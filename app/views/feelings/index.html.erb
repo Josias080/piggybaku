@@ -1,7 +1,6 @@
-<div class="contents-wrapper">
-  <h2>Bank Activity</h2>
+<div class="bankactivity-wrapper">
     <div class="summary-container">
-    <h3 class="font-round-title">You have stored <span class="font-red"><%= @negative_count %></span>bakus and <span class="font-red"><%= @positive_count %></span>pigs.<br>
+    <h3 class="font-bold-title">You have stored <span class="marker forgot"><span class="font-red"><%= @negative_count %></span>bakus</span></span> and <span class="marker stored"><span class="font-red"><%= @positive_count %></span>pigs</span><br>
       You saved
       <span class="total-money">
         <% @sum = 0 %>
@@ -27,6 +26,7 @@
     </div>
   </div>
   <div class="record-container">
+    <h2 class="font-round-title">Bank Activity</h2>
     <%= render partial: "shared/messages", feeling: @feelings %>
   </div>
 

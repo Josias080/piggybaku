@@ -38,7 +38,7 @@
     <%= f.label :content do %>
     <i class="fas fa-pencil-alt"></i>
     <% end %>
-    <%= f.input :content, placeholder: 'Thought you want to let go' , wrapper: false, label: false %>
+    <%= f.input :content, placeholder: 'memory you want to store' , wrapper: false, label: false %>
   <% end %>
 
     <h3 class="font-round-title">set a <span class="font-red">price</span> for your memory</h3>
@@ -55,7 +55,7 @@
 
     <%= f.input :is_positive, as: :hidden %>
 
-    <%= f.button :submit, "Forget!", class: "font-round-title btn btn-pink"%>
+    <%= f.button :submit, "Store!", class: "font-round-title btn btn-pink"%>
   <% end %>
 <% end %>
 </div>
