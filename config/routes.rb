@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     member do
       get 'confirmation'
     end
+    resources :donations, only: [:new, :create]
   end
 end
