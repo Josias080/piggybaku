@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     collection do
       get 'buried'
     end
+    resources :donations, only: [:new, :create]
   end
 end
