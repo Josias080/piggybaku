@@ -1,20 +1,61 @@
+<div class="form-container text-center" id="baku_form">
 <% if is_baku %>
-
   <%= simple_form_for @feeling do |f| %>
-    <%= f.input :content %>
-    <%= f.input :price_cents %>
+
+    <h3 class="font-round-title"><span class="display-block">what do you want to </span><span class="font-red">forget?</span></h3>
+
+  <%= f.input :content, label: false do %>
+    <%= f.label :content do %>
+    <i class="fas fa-pencil-alt"></i>
+    <% end %>
+    <%= f.input :content, placeholder: 'Thought you want to let go' , wrapper: false, label: false %>
+  <% end %>
+
+      <h3 class="font-round-title">set a <span class="font-red">price</span> for your thought</h3>
+
+    <%= f.input :price_cents, label: false, input_html: { class: 'form-control' } do %>
+      <%= f.label :price_cents do %>
+        <i class="fas fa-yen-sign"></i>
+      <% end %>
+
+    <div class="price-area">
+      <%= f.input :price_cents, wrapper: false, label: false %>
+      <% end %>
+    </div>
+
     <%= f.input :is_positive, as: :hidden %>
 
-    <%= f.button :submit, "Forget!", class: "btn btn-warning btn-block"%>
+    <%= f.button :submit, "Forget!", class: "font-round-title btn btn-blue"%>
   <% end %>
 
 <% else %>
 
   <%= simple_form_for @feeling do |f| %>
-    <%= f.input :content %>
-    <%= f.input :price_cents %>
+
+  <h3 class="font-round-title"><span class="display-block">which memory</span> would you like to <span class="font-red">store?</span></h3>
+
+   <%= f.input :content, label: false do %>
+    <%= f.label :content do %>
+    <i class="fas fa-pencil-alt"></i>
+    <% end %>
+    <%= f.input :content, placeholder: 'Thought you want to let go' , wrapper: false, label: false %>
+  <% end %>
+
+    <h3 class="font-round-title">set a <span class="font-red">price</span> for your memory</h3>
+
+    <%= f.input :price_cents, label: false, input_html: { class: 'form-control' } do %>
+      <%= f.label :price_cents do %>
+        <i class="fas fa-yen-sign"></i>
+      <% end %>
+
+     <div class="price-area">
+      <%= f.input :price_cents, wrapper: false, label: false %>
+      <% end %>
+    </div>
+
     <%= f.input :is_positive, as: :hidden %>
 
-    <%= f.button :submit, "Store", class: "btn btn-warning btn-block"%>
+    <%= f.button :submit, "Forget!", class: "font-round-title btn btn-pink"%>
   <% end %>
 <% end %>
+</div>
