@@ -1,3 +1,40 @@
-.total-money {
-  padding: 20px
+.action-name-index {
+  .contents-wrapper {
+    padding: 20px;
+    .chart-container {
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+  .chart-container {
+    .horizontal {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .animal-img {
+      width: 10%;
+      img {
+        width: 100%;
+      }
+    }
+    .anima-total {
+      width: 10%;
+      font-size: 30px;
+    }
+  }
+  .summary-container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .action-name-index {
+    .chart-container {
+    .animal-img {
+      width: 20%;
+    }
+    }
+  }
 }

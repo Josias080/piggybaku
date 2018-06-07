@@ -1,33 +1,32 @@
-<div class="container">
-  <div class="row">
-      <div class="col-xs-6 col-sm-6">
-        <div class="card">
-          <% @negative_count.times do  %>
-            <%= image_tag 'baku_icon.png' %>
-          <% end %>
-          <div class="card-description">
-            <h1><%= @negative_count %></h1>
-          </div>
-        </div>
-        <div class="card">
-          <% @positive_count.times do  %>
-            <%= image_tag 'pig_icon.png' %>
-          <% end %>
-          <div class="card-description">
-            <h1><%= @positive_count %></h1>
-          </div>
-        </div>
-      </div>
+<div class="contents-wrapper">
+  <h2>Bank Activity</h2>
+  <div class="chart-container">
+    <div class="horizontal">
+      <% @negative_count.times do  %>
+        <div class="animal-img"><%= image_tag 'baku_icon.png' %></div>
+      <% end %>
+      <div class="anima-total font-round-title"><%= @negative_count %></div>
+    </div>
+    <div class="horizontal">
+      <% @positive_count.times do  %>
+        <div class="animal-img"><%= image_tag 'pig_icon.png' %></div>
+      <% end %>
+      <div class="anima-total font-round-title"><%= @positive_count %></div>
+    </div>
   </div>
-</div>
-
-
-<%= render partial: "shared/messages", feeling: @feelings %>
-
-<div class="total-money text-right">
-  <% @sum = 0 %>
-  <% @feelings.each do |feeling| %>
-    <% @sum += feeling.price_cents %>
-  <% end %>
-  <p> Total: ¥<%= @sum %> </p>
+  <div class="summary-container">
+    <h3 class="font-round-title">You have stored <span class="font-red"><%= @negative_count %></span>bakus and <span class="font-red"><%= @positive_count %></span>pigs.<br>
+      You saved
+      <span class="total-money">
+        <% @sum = 0 %>
+        <% @feelings.each do |feeling| %>
+          <% @sum += feeling.price_cents %>
+        <% end %>
+        <span class="font-red">¥<%= @sum %></span>
+      </span>
+    </h3>
+  </div>
+  <div class="record-container">
+    <%= render partial: "shared/messages", feeling: @feelings %>
+  </div>
 </div>
