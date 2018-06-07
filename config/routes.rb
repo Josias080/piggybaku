@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :feelings do
     member do
       get 'confirmation'
-      put 'bury'
+      patch 'bury'
+      patch 'give_flower'
     end
     collection do
       get 'buried'
     end
+    resources :donations, only: [:new, :create]
   end
 end

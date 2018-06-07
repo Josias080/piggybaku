@@ -1,6 +1,6 @@
 class FeelingsController < ApplicationController
    skip_before_action :authenticate_user!, only: [ :new, :create ]
-   before_action :set_feeling, only: [ :bury, :show, :confirmation, :edit, :update, :destroy ]
+   before_action :set_feeling, only: [ :bury, :give_flower, :show, :confirmation, :edit, :update, :destroy ]
 
   def index
     # if current_or_guest_user
@@ -25,6 +25,11 @@ class FeelingsController < ApplicationController
   def bury
     @feeling.update(is_buried: true)
     redirect_to buried_feelings_path
+  end
+
+  def give_flower
+    @feeling.flowers += 1
+    @feeling.save
   end
 
   def new
