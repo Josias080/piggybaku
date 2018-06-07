@@ -17,6 +17,14 @@
   </div>
 </div>
 
+<div class="container">
+  <div>
+    <% @negative_count.times do  %>
+      <%= image_tag 'baku.png' %>
+    <% end %>
+  </div>
+</div>
+
 
 
 <%= render partial: "shared/messages", feeling: @feelings %>

@@ -43,7 +43,7 @@
           <% else %>
             <li><%= link_to "CHANGE PROFILE", edit_user_registration_path %></li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-            <li><%= t(".sign_out", default: "LOG OUT") %></li>
+            <li class="add-padding"><%= t(".sign_out", default: "LOG OUT") %></li>
             <% end %>
           <% end %>
           <% else %>
