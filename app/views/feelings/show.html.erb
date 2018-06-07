@@ -37,11 +37,14 @@
   </div>
 </div>
 
+<% if @feeling.is_buried %>
+<% else %>
 <div>
-  <%= simple_form_for @feeling, url: bury_feeling_path(@feeling), method: :put do |f| %>
+  <%= simple_form_for @feeling, url: bury_feeling_path(@feeling), method: :patch do |f| %>
     <%= f.button :submit, "Bury!", class: "btn btn-warning btn-block"%>
   <% end %>
   </div>
+<% end %>
 
 <% else %>
   <h3>Sorry, you're not the owner of the feeling.</h3>
