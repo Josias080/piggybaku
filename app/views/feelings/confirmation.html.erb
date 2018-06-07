@@ -1,19 +1,39 @@
-<div class="top-container" id="baku-confirmation">
-  <h2 class="title-confirmation">Yay!<br>Baku has eaten<br>your thought!</h2>
-  <div class="animal-container">
-    <div class="toggle-area" id="baku-img"><%= image_tag 'baku.png' %></div>
-    <div class="toggle-area hidden" id="piggy-img"><%= image_tag 'pig.png' %></div>
+<% if @feeling.is_positive %><!-- pig -->
+  <div class="top-container" id="pig-confirmation">
+    <h2 class="title-confirmation">Yay!<br>your memory has stored!</h2>
+    <div class="animal-container">
+      <div id="pig-img"><%= image_tag 'pig.png' %></div>
+    </div>
   </div>
-</div>
-<div class="bottom-container">
-  <div class="notice-container">
-    <ul>
-      <li><i class="fas fa-check-circle"></i>Your thought and price is stored.</li>
-      <li><i class="fas fa-smile"></i>We suggest you to put *¥500* into your piggybank.</li>
-    </ul>
+  <div class="bottom-container">
+    <div class="notice-container">
+      <ul>
+        <li><i class="fas fa-check-circle"></i>Your thought and price is stored.</li>
+        <li><i class="fas fa-smile"></i>We suggest you to put *¥500* into your piggybank.</li>
+      </ul>
+    </div>
+    <div class="linkarea-container linkarea-container text-center">
+      <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
+      <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
+    </div>
   </div>
-  <div class="linkarea-container linkarea-container text-center">
-    <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
-    <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
+<% else %><!-- baku -->
+  <div class="top-container" id="baku-confirmation">
+    <h2 class="title-confirmation">Yay!<br>Baku has eaten your thought!</h2>
+    <div class="animal-container">
+      <div id="baku-img"><%= image_tag 'baku.png' %></div>
+    </div>
   </div>
-</div>
+  <div class="bottom-container">
+    <div class="notice-container">
+      <ul>
+        <li><i class="fas fa-check-circle"></i>Your thought and price is stored.</li>
+        <li><i class="fas fa-smile"></i>We suggest you to put *¥500* into your piggybank.</li>
+      </ul>
+    </div>
+    <div class="linkarea-container linkarea-container text-center">
+      <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
+      <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
+    </div>
+  </div>
+<% end %>

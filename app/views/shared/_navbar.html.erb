@@ -20,31 +20,6 @@
         <%= t(".sign_out", default: "Log out") %>
       <% end %>
     <% end %>
-
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -53,13 +28,30 @@
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+<div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "HOME", root_path %></li>
+        <% if user_signed_in? %>
+          <li class="add-padding">YOU ARE <%= current_or_guest_user.username %></li>
+          <% if guest_user? %>
+            <li><%= link_to "BECOME A MEMBER", new_user_registration_path %></li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <li class="add-padding"><%= t(".sign_out", default: "LEAVE") %></li>
+            <% end %>
+          <% else %>
+            <li><%= link_to "CHANGE PROFILE", edit_user_registration_path %></li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <li><%= t(".sign_out", default: "LOG OUT") %></li>
+            <% end %>
+          <% end %>
+          <% else %>
+          <li><%= link_to t(".sign_up", default: "SIGN UP"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% end %>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
       </ul>
     </div>
   </div>
