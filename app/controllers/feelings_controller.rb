@@ -1,6 +1,6 @@
 class FeelingsController < ApplicationController
    skip_before_action :authenticate_user!, only: [ :new, :create ]
-   before_action :set_feeling, only: [ :show, :confirmation, :edit, :update, :destroy ]
+   before_action :set_feeling, only: [ :bury, :show, :confirmation, :edit, :update, :destroy ]
 
   def index
     # if current_or_guest_user
@@ -15,7 +15,16 @@ class FeelingsController < ApplicationController
   end
 
   def confirmation
-    @price = @feeling.price
+    @price = @feeling.price_cents
+  end
+
+  def buried
+    @buried_feelings = Feeling.where(is_buried: true).order(id: "DESC")
+  end
+
+  def bury
+    @feeling.update(is_buried: true)
+    redirect_to buried_feelings_path
   end
 
   def new
