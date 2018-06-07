@@ -1,23 +1,37 @@
-<% if @feeling.is_positive == true %>
-  <p> Would you like to share your happiness with others? Consider donating with our Non-Profit Organization of the month! </p>
-<% else %>
-  <p> Would you like to change your negative feelings into something positive? Consider donating with our Non-Profit Organization of the month! </p>
-<% end %>
-<h2> Second Harvest Japan (2HJ) </h2>
-<%= image_tag 'second_harvest.png' %>
-<p> Second Harvest Japan aims to provide everyone with access to safe and nutritious food on a daily basis. To do so, they deliver food to children's homes, single-mother shelters, centers for the disabled as well as many other welfare organizations and individuals in need. All your donations go towards delivering food to those in need. For every 25 yen you donate, they are able to provide one meal to those in need. </p>
-
-<%= form_tag feeling_donations_path(@feeling) do %>
-  <article>
-    <label class="amount">
-      <span>Donate: <%= humanized_money_with_symbol(@feeling.price) %></span>
-    </label>
-  </article>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Donation"
-    data-email="<%= current_user.email %>"
-    data-description="Feeling <%= @feeling.content %>"
-    data-amount="<%= @feeling.price_cents %>"
-    data-currency="<%= @feeling.price_currency %>"></script>
-<% end %>
+<div class="donation-type text-center font-weight-light">
+  <% if @feeling.is_positive == true %>
+    <p> Would you like to share your happiness with others? Consider donating to our NPO of the month! </p>
+  <% else %>
+    <p> Would you like to change your negative feelings into something positive? Consider donating to our NPO of the month! </p>
+  <% end %>
+</div>
+<div class="npo-name text-center">
+  <a href="http://2hj.org/"><h2> Second Harvest Japan (2HJ) </h2></a>
+</div>
+<div class="npo-image text-center">
+  <%= image_tag 'second_harvest.jpg' %>
+</div>
+<div class="npo-description text-left text-justify font-weight-light">
+  <p> Second Harvest Japan aims to provide everyone with access to safe and nutritious food on a daily basis. To do so, they deliver food to children's homes, single-mother shelters, centers for the disabled as well as many other welfare organizations and individuals in need. All your donations go towards delivering food to those in need. For every 25 yen you donate, they are able to provide one meal to those in need. </p>
+</div>
+<div>
+  <%= form_tag feeling_donations_path(@feeling) do %>
+    <article>
+      <div class="donate-amount text-center">
+        <label class="amount">
+          <span>Your thought was worth: <%= humanized_money_with_symbol(@feeling.price) %></span>
+        </label>
+      </div>
+    </article>
+    <div class="text-center">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="My Donation"
+      data-email="<%= current_user.email %>"
+      data-description="Feeling <%= @feeling.content %>"
+      data-amount="<%= @feeling.price_cents %>"
+      data-currency="<%= @feeling.price_currency %>"
+      data-label="Donate!"></script>
+  <% end %>
+  </div>
+</div>
