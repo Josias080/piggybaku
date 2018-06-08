@@ -1,53 +1,45 @@
 
 <% @feelings.each do |feeling| %>
-  <%= link_to feeling_path(feeling) do %>
-    <div class="record">
-      <div class="record-date">
-        <%= feeling.created_at.strftime("%d %b %Y") %>
-      </div>
-      <div class="record-body">
-        <% if feeling.is_positive %>
-          <p class="status"><span class="flag font-round-title stored">stored</span></p>
-          <p class="thought"><%= feeling.content %></p>
-        <% else %>
-          <p class="status"><span class="flag font-round-title forgot">forgot</span></p>
-          <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
-        <% end %>
-      </div>
-      <div class="record-status">
-        <p class="price">¥<%= feeling.price_cents %></p>
-      </div>
-      <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
+  <div class="record" data-toggle="modal" data-target="#<%= feeling.id %>">
+    <div class="record-date">
+      <%= feeling.created_at.strftime("%d %b %Y") %>
     </div>
-  <% end %>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter-<%= feeling.id %>">
-  Launch demo modal
-</button>
+    <div class="record-body">
+      <% if feeling.is_positive %>
+        <p class="status"><span class="flag font-round-title stored">stored</span></p>
+        <p class="thought"><%= feeling.content %></p>
+      <% else %>
+        <p class="status"><span class="flag font-round-title forgot">forgot</span></p>
+        <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
+      <% end %>
+    </div>
+    <div class="record-status">
+      <p class="price">¥<%= feeling.price_cents %></p>
+    </div>
+    <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
+  </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter-<%= feeling.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Text</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= feeling.content %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+  <div class="modal fade" id="<%= feeling.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Text</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= feeling.content %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<% end%>
+<% end %>
 <div class="total-money text-right">
   <% @sum = 0 %>
   <% @feelings.each do |feeling| %>
