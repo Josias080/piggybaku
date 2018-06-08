@@ -53,7 +53,7 @@
       <% end %>
     </div>
 
-    <%= f.input :is_positive, as: :hidden %>
+    <%= f.input :is_positive, input_html: {value: true}, as: :hidden %>
 
     <%= f.button :submit, "Store!", class: "font-round-title btn btn-pink"%>
   <% end %>
