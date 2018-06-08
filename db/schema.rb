@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2018_06_07_060543) do
-
+ActiveRecord::Schema.define(version: 2018_06_08_012751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +26,10 @@ ActiveRecord::Schema.define(version: 2018_06_07_060543) do
     t.boolean "is_donated", default: false, null: false
     t.boolean "is_buried", default: false, null: false
     t.integer "flowers", default: 0
+    t.jsonb "donation"
     t.index ["user_id"], name: "index_feelings_on_user_id"
   end
-  
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
