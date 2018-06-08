@@ -5,45 +5,57 @@
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content">
         <ul class="">
-          <li>
-            <ul class="user-area">
+          <li><%= link_to "home", root_path %></li>
+          <li><%= link_to "bank activity", feelings_path %></li>
+          <li><a href="#">graveyard</a></li>
+          <li><a href="#">what's Piggy Baku?</a></li>
+        </ul>
+        <ul>
+          <li class="user-area">
+            <ul>
               <% if user_signed_in? %>
-                <li>Hi,<%= current_or_guest_user.username %><i class="far fa-smile"></i></li>
+                <li class="greeting">Hi,<%= current_or_guest_user.username %> <i class="far fa-smile"></i></li>
                 <% if guest_user? %>
-                  <li>
+                  <li class="sign-up">
                     <%= link_to new_user_registration_path do %>
                       <i class="fas fa-user-plus"></i>
                     <% end %>
                   </li>
-                  <li>
+                  <li class="edit">
                     <%= link_to destroy_user_session_path, method: :delete do %>
-                      <%= t(".sign_out", default: "log out") %>
+                      <%= t(".sign_out", default: "sign out") %>
                       <i class="fas fa-sign-out-alt"></i>
                     <% end %>
                   </li>
                 <% else %>
-                  <li>
+                  <li class="edit">
                     <%= link_to edit_user_registration_path do %>
-                      <i class="fas fa-pencil-alt"></i>
+                      edit your profile<i class="fas fa-pencil-alt"></i>
                     <% end %>
                   </li>
-                  <li>
+                  <li class="sign-out">
                     <%= link_to destroy_user_session_path, method: :delete do %>
-                      <%= t(".sign_out", default: "")%>
+                      <%= t(".sign_out", default: "sign out")%>
                       <i class="fas fa-sign-out-alt"></i>
                     <% end %>
                   </li>
                 <% end %>
               <% else %><!-- /user -->
-                <li><%= link_to t(".sign_up", default: "sign up"), new_user_registration_path, class: "" %></li>
-                <li><%= link_to t(".sign_in", default: "log in"), new_user_session_path, class: "" %></li>
+                <li class="sign-up">
+                  <%= link_to new_user_registration_path do %>
+                    <%= t(".sign_up", default: "sign up") %>
+                    <i class="fas fa-user-plus"></i>
+                  <% end %>
+                </li>
+                <li class="log-in">
+                  <%= link_to new_user_session_path do %>
+                    <%= t(".sign_in", default: "log in") %>
+                    <i class="fas fa-sign-in-alt"></i>
+                  <% end %>
+                </li>
               <% end %>
             </ul>
           </li>
-          <li><%= link_to "home", root_path %></li>
-          <li><%= link_to "bank activity", feelings_path %></li>
-          <li><a href="#">graveyard</a></li>
-          <li><a href="#">what's Piggy Baku?</a></li>
         </ul>
       </div>
   </div>

@@ -1,5 +1,5 @@
 nav {
-  padding:10px;
+  padding:20px;
   background: $yellow;
 }
 
@@ -61,6 +61,38 @@ nav {
     transition: .3s ease-in-out;
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);
+    a {
+      color: #808080;
+      text-decoration: none;
+      display: block;
+      &:hover {
+        color: $pink;
+      }
+    }
+    ul {
+      padding: 0;
+      li {
+        padding: 20px;
+        &:nth-child(even) {
+          background: $light-gray;
+        }
+      }
+    }
+  .user-area {
+    padding: 0;
+    ul {
+      padding-left: 0;
+      li {
+        background: #fff;
+        &.edit,&.sign-out,&.sign-up,&.log-in {
+          font-size: 15px;
+          i {
+            padding-left:2px;
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -75,7 +107,3 @@ nav {
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
-.user-area {
-  display: flex;
-  padding-left: 0;
-}
