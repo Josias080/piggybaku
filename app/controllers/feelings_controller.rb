@@ -28,15 +28,7 @@ class FeelingsController < ApplicationController
   end
 
   def like
-    @feeling.liked_by current_user, duplicate: true
-    respond_to do |format|
-      format.html { redirect_back fallback_location: buried_feelings_path }
-      format.js { render layout: false }
-    end
-  end
-
-  def unlike
-    @feeling.unliked_by current_user
+    @feeling.vote_by voter: current_user, :duplicate => true
     respond_to do |format|
       format.html { redirect_back fallback_location: buried_feelings_path }
       format.js { render layout: false }
