@@ -2,17 +2,10 @@
 <%= buried_feeling.content %>
   <div>
     <% if user_signed_in? %>
-    <% if current_user.liked? buried_feeling %>
-      <%= link_to unlike_feeling_path(buried_feeling), method: :put, class: "unlike_feeling" do %>
-        <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-        <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'Like') %></span>
-      <% end %>
-    <% else %>
       <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
         <span class="icon"><i class="fa fa-heart"></i></span>
         <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'Like') %></span>
       <% end %>
-    <% end %>
   <% else %>
       <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
         <span class="icon"><i class="fa fa-heart"></i></span>

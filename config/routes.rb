@@ -10,7 +10,6 @@ Rails.application.routes.draw do
       get 'confirmation'
       put 'bury'
       put 'like', to: "feelings#like"
-      put 'unlike', to: "feelings#unlike"
     end
     collection do
       get 'buried'
