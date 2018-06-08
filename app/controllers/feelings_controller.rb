@@ -1,6 +1,6 @@
 class FeelingsController < ApplicationController
    skip_before_action :authenticate_user!, only: [ :new, :create ]
-   before_action :set_feeling, only: [ :bury, :give_flower, :show, :confirmation, :edit, :update, :destroy ]
+   before_action :set_feeling, only: [ :bury, :like, :unlike, :show, :confirmation, :edit, :update, :destroy ]
 
   def index
     # if current_or_guest_user
@@ -27,9 +27,20 @@ class FeelingsController < ApplicationController
     redirect_to buried_feelings_path
   end
 
-  def give_flower
-    @feeling.flowers += 1
-    @feeling.save
+  def like
+    @feeling.liked_by current_user, duplicate: true
+    respond_to do |format|
+      format.html { redirect_back fallback_location: buried_feelings_path }
+      format.js { render layout: false }
+    end
+  end
+
+  def unlike
+    @feeling.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_back fallback_location: buried_feelings_path }
+      format.js { render layout: false }
+    end
   end
 
   def new

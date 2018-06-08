@@ -1,10 +1,24 @@
 <% @buried_feelings.each do |buried_feeling| %>
 <%= buried_feeling.content %>
-<div>
-  <%= simple_form_for buried_feeling, url: give_flower_feeling_path(buried_feeling), method: :patch do |f| %>
-    <%= f.button :submit, "Give Flower!", class: "btn btn-warning btn-block"%>
+  <div>
+    <% if user_signed_in? %>
+    <% if current_user.liked? buried_feeling %>
+      <%= link_to unlike_feeling_path(buried_feeling), method: :put, class: "unlike_feeling" do %>
+        <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+        <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'Like') %></span>
+      <% end %>
+    <% else %>
+      <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
+        <span class="icon"><i class="fa fa-heart"></i></span>
+        <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'Like') %></span>
+      <% end %>
+    <% end %>
+  <% else %>
+      <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
+        <span class="icon"><i class="fa fa-heart"></i></span>
+        <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'Like') %></span>
+      <% end %>
   <% end %>
   </div>
-  <%= buried_feeling.flowers %>
 <% end %>
 
