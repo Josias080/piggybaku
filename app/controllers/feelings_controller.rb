@@ -34,6 +34,7 @@ class FeelingsController < ApplicationController
 
   def new
     @feeling = Feeling.new
+    @feeling.price_cents = nil
   end
 
   def create
