@@ -10,17 +10,30 @@ ul li {
 }
 
 .wrapper {
-  margin: 0 auto;
-  width: 960px;
-  padding-bottom: 30px;
   background: $light-gray;
-  outline: 2px dotted #fff;
-  outline-offset: -5px;
+  padding-bottom: 50px;
 }
 
 .alert {
   border: none;
   border-radius: 0;
+}
+
+.font-bold-title {
+  color: #fff;
+  font-family: arial Black;
+  text-align: center;
+  margin-top: 0;
+}
+
+.font-red {
+  color: $red;
+}
+.font-pink {
+  color: $pink;
+}
+.font-light-blue {
+  color: $light-blue;
 }
 
 .font-round-title {
@@ -29,13 +42,4 @@ ul li {
   color: $gray;
   line-height: 1.5;
   margin-top: 0;
-  .font-red {
-    color: $red;
-  }
-}
-
-@media (max-width: 768px) {
-  .wrapper {
-    width: 100%;
-  }
 }

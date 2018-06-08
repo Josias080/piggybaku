@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2018_06_08_012751) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_donated", default: false, null: false
     t.boolean "is_buried", default: false, null: false
     t.integer "flowers", default: 0
     t.jsonb "donation"
+    t.boolean "is_donated", default: false, null: false
     t.index ["user_id"], name: "index_feelings_on_user_id"
   end
 

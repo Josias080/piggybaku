@@ -1,14 +1,19 @@
+.controller-name-feelings.action-name-index{
+  .wrapper {
+    // background: $yellow;
+    outline: none;
+  }
+}
 .action-name-index {
-  .contents-wrapper {
-    padding: 20px;
+  .bankactivity-wrapper {
     .chart-container {
-      background: #fff;
       padding: 10px;
-      border-radius: 5px;
     }
   }
   .chart-container {
+    margin-top: -50px;
     margin-bottom: 20px;
+    padding: 10px;
     .horizontal {
       display: flex;
       align-items: center;
@@ -26,16 +31,49 @@
     }
   }
   .summary-container {
-    padding: 10px;
+    background: $yellow;
+    padding: 10px 10px 60px;
+    .font-bold-title {
+    line-height: 1.5;
+    }
+    .marker {
+      padding: 0 10px;
+      &.forgot {
+        background: linear-gradient(transparent 60%, $light-blue 60%);
+      }
+      &.stored {
+        background: linear-gradient(transparent 60%, $pink 60%);
+      }
+    }
+  }
+  .record-container {
+    width: 960px;
+    margin: 0 auto;
+    h2.font-round-title {
+      background: #808080;
+      color: #fff;
+      margin:0;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .total-money {
+      padding: 20px 20px 0 0;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .action-name-index {
-    .chart-container {
-    .animal-img {
-      width: 20%;
-    }
+    .bankactivity-wrapper {
+      width: 100%;
+      .chart-container {
+        .animal-img {
+          width: 20%;
+        }
+      }
+      .record-container {
+        width: 100%;
+      }
     }
   }
 }
