@@ -3,4 +3,5 @@ class Feeling < ApplicationRecord
   monetize :price_cents
   validates :content, presence: true, length: { maximum: 280 }
   validates :price_cents, presence: true
+  acts_as_votable
 end

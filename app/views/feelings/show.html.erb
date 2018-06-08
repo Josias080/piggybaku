@@ -23,7 +23,7 @@
               <% end %>
           </li>
           <li>
-            <%= link_to feeling_path(@feeling), method: :delete do %>
+            <%= link_to feeling_path(@feeling), remote: true, method: :delete do %>
              <i class="fas fa-trash-alt"></i>
             <% end %>
           </li>
@@ -40,7 +40,7 @@
 <% if @feeling.is_buried %>
 <% else %>
 <div>
-  <%= simple_form_for @feeling, url: bury_feeling_path(@feeling), method: :patch do |f| %>
+  <%= simple_form_for @feeling, url: bury_feeling_path(@feeling), method: :put do |f| %>
     <%= f.button :submit, "Bury!", class: "btn btn-warning btn-block"%>
   <% end %>
   </div>

@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
 
+gem 'acts_as_votable', '~> 0.11.1'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'devise'
@@ -16,9 +17,10 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'money-rails'
 gem 'sass-rails'
 gem 'simple_form'
+gem 'stripe'
 gem 'uglifier'
 gem 'webpacker'
-gem 'stripe'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

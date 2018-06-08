@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   resources :feelings do
     member do
       get 'confirmation'
-      patch 'bury'
-      patch 'give_flower'
+      put 'bury'
+      put 'like', to: "feelings#like"
+      put 'unlike', to: "feelings#unlike"
     end
     collection do
       get 'buried'

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :feelings, dependent: :destroy
   validates :username, presence: true
+  acts_as_voter
 
   def self.new_guest
     new do |u|
