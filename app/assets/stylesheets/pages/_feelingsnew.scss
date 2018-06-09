@@ -9,6 +9,19 @@
     margin: 0 auto;
     padding-bottom: 20px;
     padding-top: 10px;
+    position: relative;
+    .fa-angle-double-left {
+      color: $red;
+      position:absolute;
+      &.arrow-baku {
+      top: 91px;
+      right: 0;
+      }
+      &.arrow-pig {
+      top: 45px;
+      right: 0;
+      }
+    }
     img {
       width: 100%;
     }
