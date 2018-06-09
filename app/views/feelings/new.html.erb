@@ -1,10 +1,13 @@
 <%= render 'shared/toggle_animal_btn' %>
 <div class="top-container">
-  <h1 class="logo-container"><%= image_tag 'title_img.png' %></h1>
-  <div class="animal-container">
-    <div class="toggle-area" id="baku-img"><%= image_tag 'baku.png' %></div>
-    <div class="toggle-area hidden" id="piggy-img"><%= image_tag 'pig.png' %></div>
-  </div>
+  <h1 class="logo-container">
+    <%= image_tag 'title_img.png' %>
+    <i class="fas fa-angle-double-left arrow-baku" id="arrow-baku"></i>
+  </h1>
+</div>
+<div class="animal-container">
+  <div class="toggle-area" id="baku-img"><%= image_tag 'baku.png' %></div>
+  <div class="toggle-area hidden" id="piggy-img"><%= image_tag 'pig.png' %></div>
 </div>
 <div class="form-container">
   <div id="baku-form" class="toggle-area">
