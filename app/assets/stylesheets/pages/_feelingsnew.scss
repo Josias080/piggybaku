@@ -1,56 +1,29 @@
 .controller-name-feelings {
   .top-container {
-    height: 380px;
-    margin-bottom: 80px;
-    min-height: 200px;
-    padding-top: 20px;
+      height: calc(40vh - 67px);
     h1 {
       margin-top: 0;
     }
     background: $yellow;
     .logo-container {
-    width: 300px;
-    margin: 0 auto;
-    padding-bottom: 20px;
-    padding-top: 10px;
-    img {
-    width: 100%;
-    }
-    }
-  .animal-container {
-    width: 400px;
-    margin: 0 auto;
-    img {
-    width: 100%;
-    }
-    }
-  }
-
-}
-
-@media (max-width: 480px) {
-  .controller-name-feelings {
-    .form-container {
+      width: 300px;
+      margin: 0 auto;
+      padding-bottom: 20px;
       padding-top: 10px;
-    }
-    .top-container {
-    height: 50px;
-    margin-bottom: 100px;
-    padding-top: 0;
-      .logo-container {
-        width: 56%;
-        margin: 0 22%;
-        padding-bottom: 0;
-      }
-    .animal-container {
-        width: 70%;
-        margin: 0 15%;
       img {
-      width: 100%;
-      }
+        width: 100%;
       }
     }
   }
+
+  .animal-container {
+    width: 280px;
+    margin: -95px auto 0;
+    img {
+      width: 100%;
+    }
+  }
+
 }
 
 .hidden {
