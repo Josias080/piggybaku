@@ -10,8 +10,7 @@
   margin-top: 0;
   }
   .top-container {
-    margin-bottom: 120px;
-    height: 300px;
+
   }
   .bottom-container {
     width: 600px;
@@ -20,9 +19,7 @@
     .notice-container {
       margin: 30px 0;
       ul {
-      margin: 0;
-      flex-direction: column;
-      justify-content: center;
+        padding-left: 27px;
         li {
           color: #808080;
           height: 60px;
@@ -40,17 +37,8 @@
 
 @media (max-width: 480px) {
   .action-name-confirmation {
-    .top-container {
-      height: 280px;
-      margin-bottom: 80px;
-    }
     .bottom-container {
       width: 100%;
-      margin: 0;
-      padding: 0;
-      .notice-container {
-        padding: 0;
-      }
     }
   }
 }

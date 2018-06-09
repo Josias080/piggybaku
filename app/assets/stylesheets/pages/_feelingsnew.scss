@@ -1,29 +1,26 @@
-.controller-name-feelings {
-  .top-container {
-      height: calc(40vh - 67px);
-    h1 {
-      margin-top: 0;
-    }
-    background: $yellow;
-    .logo-container {
-      width: 300px;
-      margin: 0 auto;
-      padding-bottom: 20px;
-      padding-top: 10px;
-      img {
-        width: 100%;
-      }
-    }
+.top-container {
+  height: calc(40vh - 67px);
+  h1 {
+    margin-top: 0;
   }
-
-  .animal-container {
-    width: 280px;
-    margin: -95px auto 0;
+  background: $yellow;
+  .logo-container {
+    width: 300px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    padding-top: 10px;
     img {
       width: 100%;
     }
   }
+}
 
+.animal-container {
+  width: 280px;
+  margin: -95px auto 0;
+  img {
+    width: 100%;
+  }
 }
 
 .hidden {
