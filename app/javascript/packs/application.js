@@ -32,4 +32,5 @@ baku_button.addEventListener("click", (event) => {
 
 $(".toggle-animal-btn-container").click(function () {
   $(".fa-angle-double-left").toggleClass("arrow-pig");
+  $(".animal-container").toggleClass("rollIn");
 });
