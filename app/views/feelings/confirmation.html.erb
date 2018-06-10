@@ -22,7 +22,13 @@
     <h2 class="title-confirmation">Yay!<br>Baku has eaten your thought!</h2>
   </div>
   <div class="animal-container">
-    <div class="thought-container animated"><%= @feeling.content %></div>
+    <div class="thought-container animated">
+      <%  splited_feeling = @feeling.content.split(" ") %>
+      <% splited_feeling.each do |feeling| %>
+        <%= feeling %>
+      <% end %>
+    </div>
+    <%= render 'shared/heart_svg' %>
     <div id="baku-img"><%= render 'shared/baku_svg' %></div>
   </div>
   <div class="bottom-container">
