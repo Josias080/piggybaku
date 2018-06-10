@@ -22,7 +22,8 @@
     <h2 class="title-confirmation">Yay!<br>Baku has eaten your thought!</h2>
   </div>
   <div class="animal-container">
-    <div id="baku-img"><%= image_tag 'baku.png' %></div>
+    <div class="thought-container animated"><%= @feeling.content %></div>
+    <div id="baku-img"><%= render 'shared/baku_svg' %></div>
   </div>
   <div class="bottom-container">
     <div class="notice-container">
