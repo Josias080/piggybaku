@@ -1,35 +1,37 @@
-figure {
-    svg {
-      padding: 20px;
+#baku-img {
+  figure {
+      svg {
+        padding: 20px;
+      }
+  }
+  #bakuEatAnime {
+     display: inline-block;
+     overflow: visible;
+  }
+  #head {
+      animation: headmove 1.5s ease-in-out infinite alternate;
+  }
+  #tail {
+      transform-origin: 100% 0%;
+      animation: tailmove 1.5s ease-in-out 0s infinite alternate;
+  }
+
+
+  @keyframes headmove {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
     }
-}
-#bakuEatAnime {
-   display: inline-block;
-   overflow: visible;
-}
-#head {
-    animation: headmove 1.5s ease-in-out infinite alternate;
-}
-#tail {
-    transform-origin: 100% 0%;
-    animation: tailmove 1.5s ease-in-out 0s infinite alternate;
-}
-
-
-@keyframes headmove {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
+    50% {
+      transform:translateX(5px) translateY(-5px) rotate(10deg);
+    }
   }
-  50% {
-    transform:translateX(5px) translateY(-5px) rotate(10deg);
-  }
-}
-@keyframes tailmove {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(5%, 5%) rotate(20deg);
+  @keyframes tailmove {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(5%, 5%) rotate(20deg);
+    }
   }
 }
 

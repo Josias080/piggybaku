@@ -3,7 +3,14 @@
     <h2 class="title-confirmation">Yay!<br>your memory has stored!</h2>
   </div>
   <div class="animal-container">
-    <div id="pig-img"><%= image_tag 'pig.png' %></div>
+    <div class="thought-container pig-thought">
+      <%  splited_feeling = @feeling.content.split(" ") %>
+      <% splited_feeling.each do |feeling| %>
+        <%= feeling %>
+      <% end %>
+    </div>
+    <%= render 'shared/heart_svg' %>
+    <div id="pig-img" class="animated tada"><%= render 'shared/pig_svg' %></div>
   </div>
   <div class="bottom-container">
     <div class="notice-container">
@@ -22,7 +29,7 @@
     <h2 class="title-confirmation">Yay!<br>Baku has eaten your thought!</h2>
   </div>
   <div class="animal-container">
-    <div class="thought-container">
+    <div class="thought-container baku-thought">
       <%  splited_feeling = @feeling.content.split(" ") %>
       <% splited_feeling.each do |feeling| %>
         <%= feeling %>
