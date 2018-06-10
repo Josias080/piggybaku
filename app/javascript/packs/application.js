@@ -34,3 +34,8 @@ $(".toggle-animal-btn-container").click(function () {
   $(".fa-angle-double-left").toggleClass("arrow-pig");
   $(".animal-container").toggleClass("rollIn");
 });
+$('.home-nav').hover(
+    function() {
+        $('.nav-imgs').toggleClass("headShake");
+    }
+);
