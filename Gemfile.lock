@@ -43,6 +43,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     acts_as_votable (0.11.1)
+    animate-rails (1.0.10)
+      rails
     arel (9.0.0)
     autoprefixer-rails (8.6.0)
       execjs
@@ -217,6 +219,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.11.1)
+  animate-rails
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)

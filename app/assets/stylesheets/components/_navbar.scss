@@ -75,6 +75,9 @@ nav {
         padding: 20px;
         &.home-nav a {
           display: flex;
+          &:hover {
+            opacity: 0.8;
+          }
           .nav-imgs {
             margin-left: 10px;
           }
@@ -89,6 +92,7 @@ nav {
     }
   .user-area {
     margin-top: 30px;
+    padding: 0;
     ul {
       padding-left: 0;
       li {
