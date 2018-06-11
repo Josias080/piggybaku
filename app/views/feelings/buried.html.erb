@@ -1,17 +1,34 @@
-<% @buried_feelings.each do |buried_feeling| %>
-<%= buried_feeling.content %>
-  <div>
-    <% if user_signed_in? %>
-      <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
-        <span class="icon"><i class="fa fa-heart"></i></span>
-        <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'Like') %></span>
-      <% end %>
-  <% else %>
-      <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
-        <span class="icon"><i class="fa fa-heart"></i></span>
-        <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'Like') %></span>
-      <% end %>
-  <% end %>
+<div class="graveyard-container">
+  <div class="top-container">
+    <h1 class="graveyard-title">
+        the graveyard<br>of<br>negative thoughts
+    </h1>
+    <p>Here, all negative thoughts rest in piece.<br>
+    Feel free to give flowers<br>if you feel sympathy.</p>
   </div>
-<% end %>
-
+  <div class="graveyard">
+    <!-- gravestone -->
+    <% @buried_feelings.each do |buried_feeling| %>
+      <div class="gravestone">
+        <div class="thought-area">
+        <%= buried_feeling.content %>
+        <span class="date"><%= buried_feeling.created_at.strftime("%d %b %Y") %></span>
+        </div>
+        <div class="icon-area">
+          <% if user_signed_in? %>
+            <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
+              <span class="icon"><%= image_tag 'flower_pink.png' %></span>
+              <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'flowers') %></span>
+            <% end %>
+          <% else %>
+          <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
+              <span class="icon"><%= image_tag 'flower_pink.png' %></span>
+              <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'flowers') %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <!-- /gravestone -->
+  </div>
+</div>
