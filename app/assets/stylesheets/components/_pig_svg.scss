@@ -1,0 +1,26 @@
+.action-name-confirmation {
+
+  .animal-container {
+    .thought-container.pig-thought {
+      animation: thoughtmovepig 2s ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes thoughtmovepig {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(100px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(150px);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}

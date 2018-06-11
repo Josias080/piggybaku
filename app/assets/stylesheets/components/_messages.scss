@@ -43,3 +43,36 @@
     }
   }
 }
+
+.clickable {
+  cursor: pointer;
+}
+
+.modal-header {
+  background-color: $yellow;
+  color: white;
+  height: 56px;
+}
+
+.modal-footer {
+  background-color: #999999;
+  color: white;
+  .fas {
+    color: white;
+    opacity: 0.5;
+  }
+  .far {
+    color: white;
+    opacity: 0.5;
+  }
+  .fas:hover {
+    opacity: 1.0;
+  }
+  .far:hover {
+    opacity: 1.0;
+  }
+}
+
+.close {
+  display: none;
+}
