@@ -10,6 +10,7 @@ gem 'rails', '5.2.0'
 gem 'redis'
 
 gem 'acts_as_votable', '~> 0.11.1'
+gem "animate-rails"
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'devise'

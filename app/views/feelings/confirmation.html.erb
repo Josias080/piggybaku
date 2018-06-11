@@ -1,9 +1,16 @@
 <% if @feeling.is_positive %><!-- pig -->
   <div class="top-container" id="pig-confirmation">
     <h2 class="title-confirmation">Yay!<br>your memory has stored!</h2>
-    <div class="animal-container">
-      <div id="pig-img"><%= image_tag 'pig.png' %></div>
+  </div>
+  <div class="animal-container">
+    <div class="thought-container pig-thought">
+      <%  splited_feeling = @feeling.content.split(" ") %>
+      <% splited_feeling.each do |feeling| %>
+        <%= feeling %>
+      <% end %>
     </div>
+    <%= render 'shared/heart_svg' %>
+    <div id="pig-img" class="animated tada"><%= render 'shared/pig_svg' %></div>
   </div>
   <div class="bottom-container">
     <div class="notice-container">
@@ -20,9 +27,16 @@
 <% else %><!-- baku -->
   <div class="top-container" id="baku-confirmation">
     <h2 class="title-confirmation">Yay!<br>Baku has eaten your thought!</h2>
-    <div class="animal-container">
-      <div id="baku-img"><%= image_tag 'baku.png' %></div>
+  </div>
+  <div class="animal-container">
+    <div class="thought-container baku-thought">
+      <%  splited_feeling = @feeling.content.split(" ") %>
+      <% splited_feeling.each do |feeling| %>
+        <%= feeling %>
+      <% end %>
     </div>
+    <%= render 'shared/heart_svg' %>
+    <div id="baku-img" class="animated tada"><%= render 'shared/baku_svg' %></div>
   </div>
   <div class="bottom-container">
     <div class="notice-container">

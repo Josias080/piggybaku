@@ -1,55 +1,40 @@
-.controller-name-feelings {
-  .top-container {
-    height: 380px;
-    margin-bottom: 80px;
-    min-height: 200px;
-    padding-top: 20px;
-    h1 {
-      margin-top: 0;
-    }
-    background: $yellow;
-    .logo-container {
+.top-container {
+  // height: calc(40vh - 67px);
+  height: 300px;
+  h1 {
+    margin-top: 0;
+  }
+  background: $yellow;
+  .logo-container {
     width: 300px;
     margin: 0 auto;
     padding-bottom: 20px;
     padding-top: 10px;
+    position: relative;
+    .fa-angle-double-left {
+      color: $red;
+      position:absolute;
+      transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      &.arrow-baku {
+      top: 91px;
+      right: 0;
+      }
+      &.arrow-pig {
+      top: 45px;
+      right: 0;
+      }
+    }
     img {
-    width: 100%;
-    }
-    }
-  .animal-container {
-    width: 400px;
-    margin: 0 auto;
-    img {
-    width: 100%;
-    }
+      width: 100%;
     }
   }
-
 }
 
-@media (max-width: 480px) {
-  .controller-name-feelings {
-    .form-container {
-      padding-top: 10px;
-    }
-    .top-container {
-    height: 50px;
-    margin-bottom: 100px;
-    padding-top: 0;
-      .logo-container {
-        width: 56%;
-        margin: 0 22%;
-        padding-bottom: 0;
-      }
-    .animal-container {
-        width: 70%;
-        margin: 0 15%;
-      img {
-      width: 100%;
-      }
-      }
-    }
+.animal-container {
+  width: 280px;
+  margin: -95px auto 0;
+  img {
+    width: 100%;
   }
 }
 

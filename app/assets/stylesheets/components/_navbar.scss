@@ -73,12 +73,25 @@ nav {
       padding: 0;
       li {
         padding: 20px;
+        &.home-nav a {
+          display: flex;
+          &:hover {
+            opacity: 0.8;
+          }
+          .nav-imgs {
+            margin-left: 10px;
+          }
+          img {
+            width: 30px;
+          }
+      }
         &:nth-child(even) {
           background: $light-gray;
         }
       }
     }
   .user-area {
+    margin-top: 30px;
     padding: 0;
     ul {
       padding-left: 0;

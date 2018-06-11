@@ -4,13 +4,19 @@
       <label id="nav-open" for="nav-input"><span></span></label>
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content">
-        <ul class="">
-          <li><%= link_to "home", root_path %></li>
-          <li><%= link_to "bank activity", feelings_path %></li>
-          <li><a href="#">graveyard</a></li>
-          <li><a href="#">what's Piggy Baku?</a></li>
-        </ul>
         <ul>
+          <li class="home-nav">
+            <%= link_to root_path do %>
+              home
+              <div class="nav-imgs animated">
+              <%= image_tag 'baku.png' %>
+              <%= image_tag 'pig.png' %>
+              </div>
+            <% end %>
+          </li>
+          <li><%= link_to "bank activity", feelings_path %></li>
+          <li><%= link_to "graveyard",  buried_feelings_path %></li>
+          <li><%= link_to "what's Piggy Baku?",  about_path %></li>
           <li class="user-area">
             <ul>
               <% if user_signed_in? %>
