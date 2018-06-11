@@ -14,13 +14,17 @@
   <div class="chart-container">
     <div class="horizontal">
       <% @negative_count.times do  %>
-        <div class="animal-img"><%= image_tag 'baku.png' %></div>
+        <div class="animal-img">
+          <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+        </div>
       <% end %>
       <div class="anima-total font-round-title"><%= @negative_count %></div>
     </div>
     <div class="horizontal">
       <% @positive_count.times do  %>
-        <div class="animal-img"><%= image_tag 'pig.png' %></div>
+        <div class="animal-img">
+          <%= image_tag 'pig.png', class: " mitarashi poyon" %>
+        </div>
       <% end %>
       <div class="anima-total font-round-title"><%= @positive_count %></div>
     </div>
@@ -34,3 +38,30 @@
     <%= link_to 'add a new thought', root_path, class: "font-round-title btn btn-pink" %>
   </div>
 </div>
+
+
+<%= content_for :after_js do %>
+  <script type="text/javascript">
+    const looopAnimation = (targetClass, className, delay) => {
+      var elements = document.querySelectorAll(targetClass);
+
+      elements.forEach((element) => {
+
+        element.addEventListener("animationend", () => {
+          element.classList.remove(className);
+        });
+
+        element.addEventListener("touchstart", (event) => {
+          event.preventDefault();
+
+          setTimeout(() => {
+            element.classList.add(className);
+          }, delay);
+        });
+      });
+    };
+
+
+  looopAnimation(".mitarashi", "poyon", 300);
+  </script>
+<% end %>
