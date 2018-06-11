@@ -1,6 +1,6 @@
 
 <% @feelings.each do |feeling| %>
-  <div class="record" data-toggle="modal" data-target="#<%= feeling.id %>">
+  <div class="record clickable" data-toggle="modal" data-target="#<%= feeling.id %>">
     <div class="record-date">
       <%= feeling.created_at.strftime("%d %b %Y") %>
     </div>
