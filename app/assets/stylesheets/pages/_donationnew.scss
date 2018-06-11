@@ -12,14 +12,14 @@
 
 .donation-header {
   background: $yellow;
-  padding: 10px 10px 60px;
+  padding: 10px 10px 125px;
 }
 
 .donation-type {
-  padding: 15px;
   font-family: "Arial Rounded MT Bold";
   color: #808080;
   line-height: 1.5;
+  margin-top: -30px;
 }
 
 .npo-name {
@@ -32,11 +32,11 @@
 
 .npo-image {
   padding: 15px;
+  margin-top: -110px;
+  margin-bottom: 20px;
 }
 
 .npo-description {
-  padding-top: 30px;
-  padding-bottom: 30px;
   padding-right: 60px;
   padding-left: 60px;
   font-family: "Arial Rounded MT Bold";
@@ -50,3 +50,4 @@
   color: #808080;
   line-height: 1.5;
 }
+
