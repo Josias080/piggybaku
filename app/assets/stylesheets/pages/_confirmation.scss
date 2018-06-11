@@ -15,20 +15,70 @@
     padding: 0 20px;
     .notice-container {
       margin: 30px 0;
-      ul {
-        padding-left: 27px;
-        li {
-          color: #808080;
-          height: 60px;
-          font-size: 21px;
-          padding-left: 10px;
-          text-indent: -10px;
-          i {
-            margin-right: 5px;
-          }
+      p {
+        color: #808080;
+        font-size: 21px;
+        padding-left: 10px;
+        text-indent: -10px;
+        text-align: center;
+        animation: notice-show 2s ease-in-out 1s 1 forwards;
+        opacity: 0;
+        i {
+          margin-right: 5px;
         }
       }
     }
+    .receipt {
+      width: 300px;
+      padding:20px;
+      margin: 0 auto;
+      color: #808080;
+      background: #fff;
+      opacity: 0;
+      animation: receipt-show 2s ease-in-out 1.5s 1 forwards;
+      box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+      .receipt-content {
+        padding-bottom: 20px;
+        font-size: 16px;
+      }
+      h4 {
+        text-align:center;
+        font-weight: bold;
+        span {
+          font-weight: normal;
+          font-size:16px;
+        }
+        &:before,&:after {
+          content: '******************';
+          display: block;
+        }
+      }
+      .date {
+        text-align:center;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@keyframes notice-show {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes receipt-show {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
