@@ -11,6 +11,11 @@
   }
   .animal-container {
     padding-bottom: 200px;
+    #baku-img,#pig-img {
+      figure {
+        animation: fadeout 3s ease-in-out forwards alternate;
+      }
+    }
   }
   .payment-wrapper {
     position:absolute;
