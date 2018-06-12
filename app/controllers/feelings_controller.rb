@@ -55,7 +55,7 @@ class FeelingsController < ApplicationController
 
   def update
     if @feeling.update(feeling_params)
-      redirect_to feeling_path(@feeling)
+      redirect_to feelings_path
     else
       render :edit
     end

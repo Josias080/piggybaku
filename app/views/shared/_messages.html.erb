@@ -24,7 +24,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Text</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle"><p><%= feeling.created_at.strftime("%d %b %Y") %>&nbsp;&nbsp;&nbsp;&nbsp;¥<%= feeling.price_cents %></p></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
