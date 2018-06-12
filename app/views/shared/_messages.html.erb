@@ -1,77 +1,68 @@
-<div class="record-wrap">
-  <!-- record -->
-  <% @feelings.each do |feeling| %>
-    <div class="record clickable" data-toggle="modal" data-target="#<%= feeling.id %>">
-      <div class="record-date">
-        <%= feeling.created_at.strftime("%d %b %Y") %>
-      </div>
-      <div class="record-body">
-        <% if feeling.is_positive %>
-          <p class="status"><span class="flag font-round-title stored">stored</span></p>
-          <p class="thought"><%= feeling.content %></p>
-        <% else %>
-          <p class="status"><span class="flag font-round-title forgot">forgot</span></p>
-          <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
-        <% end %>
-      </div>
-      <div class="record-status">
-        <p class="price">¥<%= feeling.price_cents %></p>
-      </div>
-      <% if feeling.is_positive %>
-        <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
-      <% else %>
-        <div class="icon"><%= image_tag 'flower_pink.png', :class => "flower-icon" %></div>
-      <% end %>
-      <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
+<!-- record -->
+<% @feelings.each do |feeling| %>
+  <div class="record clickable" data-toggle="modal" data-target="#<%= feeling.id %>">
+    <div class="record-date">
+      <%= feeling.created_at.strftime("%d %b %Y") %>
     </div>
+    <div class="record-body">
+      <% if feeling.is_positive %>
+        <p class="status"><span class="flag font-round-title stored">stored</span></p>
+        <p class="thought"><%= feeling.content %></p>
+      <% else %>
+        <p class="status"><span class="flag font-round-title forgot">forgot</span></p>
+        <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
+      <% end %>
+    </div>
+    <div class="record-status">
+      <p class="price">¥<%= feeling.price_cents %></p>
+    </div>
+    <% if feeling.is_positive %>
+      <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+    <% else %>
+      <div class="icon"><%= image_tag 'flower_pink.png', :class => "flower-icon" %></div>
+    <% end %>
+    <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
+  </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="<%= feeling.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"><p><%= feeling.created_at.strftime("%d %b %Y") %>&nbsp;&nbsp;&nbsp;&nbsp;¥<%= feeling.price_cents %></p></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <%= feeling.content %>
-          </div>
-          <div class="modal-footer">
+  <!-- Modal -->
+  <div class="modal fade" id="<%= feeling.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><p><%= feeling.created_at.strftime("%d %b %Y") %>&nbsp;&nbsp;&nbsp;&nbsp;¥<%= feeling.price_cents %></p></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= feeling.content %>
+        </div>
+        <div class="modal-footer">
 
-            <% if feeling.is_positive? %>
-              <%= link_to new_feeling_donation_path(feeling) do %>
-                  donate <i class="fas fa-hand-holding-usd"></i>
-                <% end %>
-            <% else %>
-              <%= simple_form_for feeling, url: bury_feeling_path(feeling), method: :put do |f| %>
-                <%= button_tag type: :submit, class: "grave-icon" do %>
-                  <div class="grave-icon" style="white-space:nowrap">grave<%= image_tag 'grave.svg' %></div>
-                <% end %>
+          <% if feeling.is_positive? %>
+            <%= link_to new_feeling_donation_path(feeling) do %>
+                donate <i class="fas fa-hand-holding-usd"></i>
+              <% end %>
+          <% else %>
+            <%= simple_form_for feeling, url: bury_feeling_path(feeling), method: :put do |f| %>
+              <%= button_tag type: :submit, class: "grave-icon" do %>
+                <div class="grave-icon" style="white-space:nowrap">grave<%= image_tag 'grave.svg' %></div>
               <% end %>
             <% end %>
+          <% end %>
 
-            <%= link_to edit_feeling_path(feeling) do %>
-                edit <i class="far fa-edit"></i>
-              <% end %>
-
-            <%= link_to feeling_path(feeling), method: :delete, :data => {confirm: "Delete this entry?"} do %>
-              delete <i class="fas fa-trash-alt"></i>
+          <%= link_to edit_feeling_path(feeling) do %>
+              edit <i class="far fa-edit"></i>
             <% end %>
 
-          </div>
+          <%= link_to feeling_path(feeling), method: :delete, :data => {confirm: "Delete this entry?"} do %>
+            delete <i class="fas fa-trash-alt"></i>
+          <% end %>
+
         </div>
       </div>
     </div>
-    <!-- /Modal -->
-  <% end %><!-- /record -->
-</div>
+  </div>
+  <!-- /Modal -->
+<% end %><!-- /record -->
 
-<div class="total-money text-right">
-  <% @sum = 0 %>
-  <% @feelings.each do |feeling| %>
-    <% @sum += feeling.price_cents %>
-  <% end %>
-  <p class="font-round-title">Total: ¥<%= @sum %></p>
-</div>

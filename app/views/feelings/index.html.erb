@@ -122,10 +122,19 @@
       </div>
     </table>
   </div>
-  <div class="record-container onhidden">
-    <h2 class="font-round-title">Bank Activity</h2>
-    <%= render partial: "shared/messages", feeling: @feelings %>
-    <div class="readmore"><span>display more</span><i class="fas fa-angle-double-down"></i></div>
+  <div class="record-container">
+    <div class="record-wrap onhidden">
+      <h2 class="font-round-title">Bank Activity</h2>
+      <%= render partial: "shared/messages", feeling: @feelings %>
+      <div class="readmore"><span>display more</span><i class="fas fa-angle-double-down"></i></div>
+    </div>
+    <div class="total-money text-right">
+      <% @sum = 0 %>
+      <% @feelings.each do |feeling| %>
+      <% @sum += feeling.price_cents %>
+      <% end %>
+      <p class="font-round-title">Total: ¥<%= @sum %></p>
+    </div>
   </div>
 
   <div class="linkarea-container linkarea-container text-center">

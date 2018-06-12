@@ -46,4 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-
+$(function(){
+  $('.readmore').click(function(){
+    $(this).hide();
+    $(this).parent('.record-wrap').removeClass('onhidden');
+  });
+});
