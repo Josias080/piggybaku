@@ -9,19 +9,26 @@
   line-height: 1.25;
   margin-top: 0;
   }
-  .bottom-container {
-    width: 600px;
-    margin: 0 auto;
-    padding: 0 20px;
+  .animal-container {
+    padding-bottom: 200px;
+    #baku-img,#pig-img {
+      figure {
+        animation: fadeout 3s ease-in-out forwards alternate;
+      }
+    }
+  }
+  .payment-wrapper {
+    position:absolute;
+    top:-60px;
     .notice-container {
       margin: 30px 0;
       p {
-        color: #808080;
+        color: #fff;
         font-size: 21px;
         padding-left: 10px;
         text-indent: -10px;
         text-align: center;
-        animation: notice-show 2s ease-in-out 1s 1 forwards;
+        animation: notice-show 2s ease-in-out 2s 1 forwards;
         opacity: 0;
         i {
           margin-right: 5px;
@@ -29,6 +36,7 @@
       }
     }
     .receipt {
+      opacity:0;
       width: 300px;
       padding:20px;
       margin: 0 auto;
@@ -39,6 +47,7 @@
       box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
       .receipt-content {
         padding-bottom: 20px;
+        word-break: break-all;
         font-size: 16px;
       }
       h4 {
@@ -58,6 +67,12 @@
         font-size: 16px;
       }
     }
+  }
+  .bottom-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+
   }
 }
 

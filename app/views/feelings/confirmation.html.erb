@@ -11,14 +11,22 @@
     </div>
     <%= render 'shared/heart_svg' %>
     <div id="pig-img" class="animated tada"><%= render 'shared/pig_svg' %></div>
+    <div class="payment-wrapper">
+      <div class="notice-container">
+          <p><i class="fas fa-check-circle"></i>You paid to <span class="font-red">store!</span><br>Here's your receipt</p>
+      </div>
+
+      <div class="receipt">
+        <h4>Piggybaku<br><span>Tokyo,Japan</span></h4>
+        <p class="date"><%= @feeling.created_at.strftime("%d %b %Y") %></p>
+        <div class="receipt-content">
+          <p><%= @feeling.content%></p><p>¥<%= @feeling.price_cents %></p>
+        </div>
+        <p class="total">TOTAL ¥<%= @feeling.price_cents %></p>
+      </div>
+    </div>
   </div>
   <div class="bottom-container">
-    <div class="notice-container">
-      <ul>
-        <li><i class="fas fa-check-circle"></i>Your thought and price is stored.</li>
-        <li><i class="fas fa-smile"></i>We suggest you to put ¥<%= @price %> into your piggybank.</li>
-      </ul>
-    </div>
     <div class="linkarea-container linkarea-container text-center">
       <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
       <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
@@ -37,12 +45,9 @@
     </div>
     <%= render 'shared/heart_svg' %>
     <div id="baku-img" class="animated tada"><%= render 'shared/baku_svg' %></div>
-  </div>
-  <div class="bottom-container">
-
     <div class="payment-wrapper">
       <div class="notice-container">
-          <p><i class="fas fa-check-circle"></i>You paid for your thought!</p>
+          <p><i class="fas fa-check-circle"></i>You paid to <span class="font-red">forget!</span><br>Here's your receipt</p>
       </div>
 
       <div class="receipt">
@@ -54,7 +59,8 @@
         <p class="total">TOTAL ¥<%= @feeling.price_cents %></p>
       </div>
     </div>
-
+  </div>
+  <div class="bottom-container">
     <div class="linkarea-container linkarea-container text-center">
       <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
       <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
