@@ -48,7 +48,7 @@
               edit <i class="far fa-edit"></i>
             <% end %>
 
-          <%= link_to feeling_path(feeling), method: :delete do %>
+          <%= link_to feeling_path(feeling), method: :delete, :data => {confirm: "Delete this entry?"} do %>
             delete <i class="fas fa-trash-alt"></i>
           <% end %>
 
