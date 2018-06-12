@@ -48,6 +48,14 @@
   cursor: pointer;
 }
 
+.icon{
+  padding: 4px;
+  .flower-icon {
+    width: 16px;
+  }
+}
+
+
 .modal-header {
   background-color: $yellow;
   color: white;
