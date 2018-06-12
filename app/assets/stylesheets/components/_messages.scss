@@ -65,6 +65,10 @@
 .modal-footer {
   background-color: #999999;
   color: #4b4b4b;
+  form{
+    display: inline-block;
+    padding-right: 6px;
+  }
   button{
     background-color: #999999;
     border: none;
