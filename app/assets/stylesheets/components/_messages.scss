@@ -56,13 +56,13 @@
 
 .modal-footer {
   background-color: #999999;
-  color: white;
+  color: #4b4b4b;
   .fas {
-    color: white;
+    color: #4b4b4b;
     opacity: 0.5;
   }
   .far {
-    color: white;
+    color: #4b4b4b;
     opacity: 0.5;
   }
   .fas:hover {
@@ -71,8 +71,20 @@
   .far:hover {
     opacity: 1.0;
   }
+  .grave-icon {
+  width: 20.25px;
+  color: #4b4b4b;
+  opacity: 0.4;
+  display: inline-block;
+  margin-right: 45px;
+  }
+  .grave-icon:hover {
+    opacity: 1.0;
+  }
 }
 
 .close {
   display: none;
 }
+
+
