@@ -37,12 +37,9 @@
     </div>
     <%= render 'shared/heart_svg' %>
     <div id="baku-img" class="animated tada"><%= render 'shared/baku_svg' %></div>
-  </div>
-  <div class="bottom-container">
-
     <div class="payment-wrapper">
       <div class="notice-container">
-          <p><i class="fas fa-check-circle"></i>You paid for your thought!</p>
+          <p><i class="fas fa-check-circle"></i>You paid for your thought!<br>Here's your receipt</p>
       </div>
 
       <div class="receipt">
@@ -54,7 +51,8 @@
         <p class="total">TOTAL ¥<%= @feeling.price_cents %></p>
       </div>
     </div>
-
+  </div>
+  <div class="bottom-container">
     <div class="linkarea-container linkarea-container text-center">
       <%= link_to 'add new thought', root_path, class: "font-round-title btn btn-pink" %>
       <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
