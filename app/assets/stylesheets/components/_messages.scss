@@ -65,6 +65,11 @@
 .modal-footer {
   background-color: #999999;
   color: #4b4b4b;
+  button{
+    background-color: #999999;
+    border: none;
+    display: inline-block;
+  }
   .fas {
     color: #4b4b4b;
     opacity: 0.5;
@@ -82,7 +87,7 @@
   .grave-icon {
   width: 20.25px;
   color: #4b4b4b;
-  opacity: 0.4;
+  opacity: 0.6;
   display: inline-block;
   margin-right: 45px;
   }

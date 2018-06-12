@@ -45,13 +45,11 @@
               <% end %>
           <% else %>
             <%= simple_form_for feeling, url: bury_feeling_path(feeling), method: :put do |f| %>
-            <%= f.button :submit, "Bury!", class: "btn btn-warning btn-block"%>
+              <%= button_tag type: :submit, class: "grave-icon" do %>
+                <div class="grave-icon" style="white-space:nowrap">grave<%= image_tag 'grave.svg' %></div>
+              <% end %>
             <% end %>
           <% end %>
-
-            <%= link_to buried_feelings_path do %>
-              <div class="grave-icon" style="white-space:nowrap">grave<%= image_tag 'grave.svg' %></div>
-            <% end %>
 
           <%= link_to edit_feeling_path(feeling) do %>
               edit <i class="far fa-edit"></i>
