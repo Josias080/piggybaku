@@ -1,5 +1,4 @@
-.record-container {
-  width: 960px;
+.title-container {
   margin: 0 auto;
   h2.font-round-title {
     background: #808080;
@@ -8,6 +7,7 @@
     padding: 10px 0;
     text-align: center;
   }
+  margin-bottom: 30px;
 }
 
 .donation-header {
@@ -51,6 +51,16 @@
   color: #808080;
   line-height: 1.5;
 }
+
+.marker {
+      padding: 0 10px;
+      &.forgot {
+        background: linear-gradient(transparent 60%, $light-blue 60%);
+      }
+      &.stored {
+        background: linear-gradient(transparent 60%, $pink 60%);
+      }
+    }
 
 .stripe-button-el span {
 background: none transparent!important;
