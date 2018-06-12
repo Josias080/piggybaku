@@ -1,46 +1,47 @@
 .record-container {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  a {
-    color: #808080;
-    &:hover {
-      text-decoration: none;
-      color: #4d4d4d;
-    }
-    &:nth-of-type(even) .record {
-      background: #f5f5f5;
-    }
-  }
-  .record {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background: #fff;
-    font-size: 16px;
-
-    .flag {
-      display: block;
-      border-radius: 3px;
-      background: #000;
-      text-align: center;
-      width: 60px;
-      color: #fff;
-      font-size: 12px;
-      &.stored{
-        background: $pink;
+  color: #808080;
+  border-radius: 5px;
+  .record-wrap{
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+    .record {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      font-size: 16px;
+      border-bottom: 1px solid $light-gray;
+      &:hover {
+        text-decoration: none;
+        color: #4d4d4d;
       }
-      &.forgot{
-        background: $light-blue;
+      &:nth-of-type(even) .record {
+        background: #f5f5f5;
       }
-    }
-    .record-date{
-      flex:1;
-      font-size: 14px;
-    }
-    .record-status {
-      flex:1;
-    }
-    .record-body {
-      flex:3;
+      .flag {
+        display: block;
+        border-radius: 3px;
+        background: #000;
+        text-align: center;
+        width: 60px;
+        color: #fff;
+        font-size: 12px;
+        &.stored{
+          background: $pink;
+        }
+        &.forgot{
+          background: $light-blue;
+        }
+      }
+      .record-date{
+        flex:1;
+        font-size: 14px;
+      }
+      .record-status {
+        flex:1;
+      }
+      .record-body {
+        flex:3;
+      }
     }
   }
 }
