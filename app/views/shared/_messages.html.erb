@@ -1,4 +1,4 @@
-
+<!-- record -->
 <% @feelings.each do |feeling| %>
   <div class="record clickable" data-toggle="modal" data-target="#<%= feeling.id %>">
     <div class="record-date">
@@ -24,50 +24,50 @@
     <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
   </div>
 
-<!-- Modal -->
+  <!-- Modal -->
   <div class="modal fade" id="<%= feeling.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle"><p><%= feeling.created_at.strftime("%d %b %Y") %>&nbsp;&nbsp;&nbsp;&nbsp;¥<%= feeling.price_cents %></p></h5>
+          <h5 class="modal-title" id="exampleModalLongTitle"><%= feeling.created_at.strftime("%d %b %Y") %></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <%= feeling.content %>
+          <div class="modal-content-container">
+            <div class="content"><%= feeling.content %></div>
+            <div class="price">¥<%= feeling.price_cents %></div>
+          </div>
+          <div class="action-container text-right">
+            <%= link_to edit_feeling_path(feeling) do %>
+              edit<i class="far fa-edit"></i>
+            <% end %>
+            <%= link_to feeling_path(feeling), method: :delete, :data => {confirm: "Delete this entry?"} do %>
+              delete<i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
         </div>
-        <div class="modal-footer">
-
-          <% if feeling.is_positive? %>
+        <div class="modal-link">
+          <% if feeling.is_positive? %><!-- positive -->
             <%= link_to new_feeling_donation_path(feeling) do %>
                 donate <i class="fas fa-hand-holding-usd"></i>
-              <% end %>
-          <% else %>
-            <%= simple_form_for feeling, url: bury_feeling_path(feeling), method: :put do |f| %>
-              <%= button_tag type: :submit, class: "grave-icon" do %>
-                <div class="grave-icon" style="white-space:nowrap">grave<%= image_tag 'grave.svg' %></div>
-              <% end %>
             <% end %>
+            <% else %><!-- negative -->
+              <h3>Got over this thought?<br>
+                Send your thought to the graveyard and share!</h3>
+                <div class="grave-button">
+                <%= simple_form_for feeling, url: bury_feeling_path(feeling), method: :put do |f| %>
+                  <%= button_tag type: :submit, class:"btn btn-pink" do %>
+                    send to graveyard<span class="grave-icon"><%= image_tag 'gravestone_white.png' %></span>
+                  <% end %>
+                <% end %>
+              </div>
           <% end %>
-
-          <%= link_to edit_feeling_path(feeling) do %>
-              edit <i class="far fa-edit"></i>
-            <% end %>
-
-          <%= link_to feeling_path(feeling), method: :delete, :data => {confirm: "Delete this entry?"} do %>
-            delete <i class="fas fa-trash-alt"></i>
-          <% end %>
-
         </div>
       </div>
     </div>
   </div>
-<% end %>
-<div class="total-money text-right">
-  <% @sum = 0 %>
-  <% @feelings.each do |feeling| %>
-    <% @sum += feeling.price_cents %>
-  <% end %>
-  <p class="font-round-title">Total: ¥<%= @sum %></p>
-</div>
+  <!-- /Modal -->
+<% end %><!-- /record -->
+
