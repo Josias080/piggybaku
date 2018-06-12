@@ -1,30 +1,38 @@
 
 <div class="container">
-  <div class="row">
+  <div class="row text-center">
     <div col-xs-3>
       <div>
-       <%= image_tag 'piggy-baku-about.png' %>
+       <%= image_tag 'piggy-baku-about.png', class: "img-responsive" %>
       </div>
     </div>
     <div col-xs-3>
       <div>
-       <%= image_tag 'piggy-baku-about_2.png' %>
+       <%= image_tag 'piggy-baku-about_2.png', class: "img-responsive" %>
+      </div>
+      <div class="background-white">
+        <%= link_to root_path do %>
+        <button type="button" class="btn-medium">try this <i class="fas fa-chevron-circle-right"></i> </button>
+        <% end %>
       </div>
       <div>
-        <button type="button" class="btn btn-danger">Try this</button>
+        <%= image_tag 'piggy-baku-about-why.png',class: "img-responsive" %>
+        <%= render 'shared/carrousel' %>
       </div>
-      <div>
-       <%= image_tag 'piggy-baku-about_why.png' %>
-      </div>
-      <div>
-        <button type="button" class="btn btn-danger">Try this</button>
+      <div class="background-white" >
+        <%= link_to root_path do %>
+        <button type="button" class="btn-medium">try this <i class="fas fa-chevron-circle-right"></i> </button>
+        <% end %>
       </div>
        <div>
-       <%= image_tag 'piggy-baku-about_block.png' %>
+       <%= image_tag 'piggy-baku-about_block.png', class: "img-responsive" %>
       </div>
-      <div>
-        <button type="button" class="btn btn-danger">Try this</button>
+      <div class="background-white" >
+        <%= link_to root_path do %>
+        <button type="button" class="btn-medium">try this <i class="fas fa-chevron-circle-right"></i> </button>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
