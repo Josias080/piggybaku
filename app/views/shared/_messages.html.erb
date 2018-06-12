@@ -16,6 +16,11 @@
     <div class="record-status">
       <p class="price">¥<%= feeling.price_cents %></p>
     </div>
+    <% if feeling.is_positive %>
+      <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+    <% else %>
+      <div class="icon"><%= image_tag 'flower_pink.png', :class => "flower-icon" %></div>
+    <% end %>
     <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
   </div>
 
