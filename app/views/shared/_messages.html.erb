@@ -1,23 +1,29 @@
 <div class="record-wrap">
   <% @feelings.each do |feeling| %>
-    <div class="record clickable" data-toggle="modal" data-target="#<%= feeling.id %>">
-      <div class="record-date">
-        <%= feeling.created_at.strftime("%d %b %Y") %>
-      </div>
-      <div class="record-body">
-        <% if feeling.is_positive %>
-          <p class="status"><span class="flag font-round-title stored">stored</span></p>
-          <p class="thought"><%= feeling.content %></p>
-        <% else %>
-          <p class="status"><span class="flag font-round-title forgot">forgot</span></p>
-          <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
-        <% end %>
-      </div>
-      <div class="record-status">
-        <p class="price">¥<%= feeling.price_cents %></p>
-      </div>
-      <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
+  <div class="record clickable" data-toggle="modal" data-target="#<%= feeling.id %>">
+    <div class="record-date">
+      <%= feeling.created_at.strftime("%d %b %Y") %>
     </div>
+    <div class="record-body">
+      <% if feeling.is_positive %>
+      <p class="status"><span class="flag font-round-title stored">stored</span></p>
+      <p class="thought"><%= feeling.content %></p>
+      <% else %>
+      <p class="status"><span class="flag font-round-title forgot">forgot</span></p>
+      <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
+      <% end %>
+    </div>
+    <div class="record-status">
+      <p class="price">¥<%= feeling.price_cents %></p>
+    </div>
+  </div>
+    <% if feeling.is_positive %>
+      <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+    <% else %>
+      <div class="icon"><%= image_tag 'flower_pink.png', :class => "flower-icon" %></div>
+    <% end %>
+    <div class="icon"><i class="fas fa-arrow-circle-right"></i></div>
+</div>
 
   <!-- Modal -->
   <div class="modal fade" id="<%= feeling.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

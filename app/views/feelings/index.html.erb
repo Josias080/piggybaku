@@ -12,22 +12,114 @@
     </h3>
   </div>
   <div class="chart-container">
-    <div class="horizontal">
-      <% @negative_count.times do  %>
-        <div class="animal-img">
-          <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+    <table>
+      <div id="container">
+        <div class="week">
+          <% if @week_feelings["Mon"].present? %>
+            <% @week_feelings["Mon"].each do |feeling| %>
+              <% if feeling.is_positive %>
+                <div class="animal-img">
+                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
+                </div>
+              <% else %>
+                <div class="animal-img">
+                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
-      <div class="anima-total font-round-title"><%= @negative_count %></div>
-    </div>
-    <div class="horizontal">
-      <% @positive_count.times do  %>
-        <div class="animal-img">
-          <%= image_tag 'pig.png', class: " mitarashi poyon" %>
+        <div class="week">
+          <% if @week_feelings["Tue"].present? %>
+            <% @week_feelings["Tue"].each do |feeling| %>
+              <% if feeling.is_positive %>
+                <div class="animal-img">
+                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
+                </div>
+              <% else %>
+                <div class="animal-img">
+                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
-      <div class="anima-total font-round-title"><%= @positive_count %></div>
-    </div>
+        <div class="week">
+          <% if @week_feelings["Wed"].present? %>
+            <% @week_feelings["Wed"].each do |feeling| %>
+              <% if feeling.is_positive %>
+                <div class="animal-img">
+                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
+                </div>
+              <% else %>
+                <div class="animal-img">
+                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="week">
+          <% if @week_feelings["Thu"].present? %>
+            <% @week_feelings["Thu"].each do |feeling| %>
+              <% if feeling.is_positive %>
+                <div class="animal-img">
+                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
+                </div>
+              <% else %>
+                <div class="animal-img">
+                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="week">
+          <% if @week_feelings["Fri"].present? %>
+            <% @week_feelings["Fri"].each do |feeling| %>
+              <% if feeling.is_positive %>
+                <div class="animal-img">
+                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
+                </div>
+              <% else %>
+                <div class="animal-img">
+                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="week">
+          <% if @week_feelings["Sat"].present? %>
+            <% @week_feelings["Sat"].each do |feeling| %>
+              <% if feeling.is_positive %>
+                <div class="animal-img">
+                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
+                </div>
+              <% else %>
+                <div class="animal-img">
+                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="week">
+          <% if @week_feelings["Sun"].present? %>
+            <% @week_feelings["Sun"].each do |feeling| %>
+              <% if feeling.is_positive %>
+                <div class="animal-img">
+                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
+                </div>
+              <% else %>
+                <div class="animal-img">
+                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+    </table>
   </div>
   <div class="record-container onhidden">
     <h2 class="font-round-title">Bank Activity</h2>
@@ -39,7 +131,6 @@
     <%= link_to 'add a new thought', root_path, class: "font-round-title btn btn-pink" %>
   </div>
 </div>
-
 
 <%= content_for :after_js do %>
   <script type="text/javascript">

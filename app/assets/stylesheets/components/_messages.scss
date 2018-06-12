@@ -50,6 +50,14 @@
   cursor: pointer;
 }
 
+.icon{
+  padding: 4px;
+  .flower-icon {
+    width: 16px;
+  }
+}
+
+
 .modal-header {
   background-color: $yellow;
   color: white;
@@ -59,6 +67,15 @@
 .modal-footer {
   background-color: #999999;
   color: #4b4b4b;
+  form{
+    display: inline-block;
+    padding-right: 6px;
+  }
+  button{
+    background-color: #999999;
+    border: none;
+    display: inline-block;
+  }
   .fas {
     color: #4b4b4b;
     opacity: 0.5;
@@ -76,7 +93,7 @@
   .grave-icon {
   width: 20.25px;
   color: #4b4b4b;
-  opacity: 0.4;
+  opacity: 0.6;
   display: inline-block;
   margin-right: 45px;
   }

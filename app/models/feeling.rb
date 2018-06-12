@@ -5,4 +5,4 @@ class Feeling < ApplicationRecord
   validates :price_cents, presence: true, numericality: { less_than: 10000 }
   acts_as_votable
 end
- 
+
