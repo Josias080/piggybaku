@@ -51,7 +51,9 @@
     position:relative;
     width: 960px;
     margin: 0 auto;
-    // z-index:0;
+    .total-money {
+      padding: 20px 20px 0 0;
+    }
     .record-wrap {
       &.onhidden {
         height:425px;
@@ -70,6 +72,9 @@
         border-radius: 5px;
         padding:5px 30px;
         color:$gray;
+        &:hover {
+          color: $pink;
+        }
         i {
           padding-left: 5px;
         }
@@ -80,9 +85,6 @@
         margin:0;
         padding: 10px 0;
         text-align: center;
-      }
-      .total-money {
-        padding: 20px 20px 0 0;
       }
     }
   }
