@@ -1,5 +1,6 @@
 body.action-name-memory {
   background: $light-gray;
+      background-image: image-url("grass.png");
 }
 .action-name-memory {
   background: #dbdbdb;
@@ -8,7 +9,6 @@ body.action-name-memory {
   }
   .memorylane-page {
     .top-container {
-      // background-image: image-url("green_bg.jpg");
       background: $yellow;
       text-align: center;
       color: #fff;

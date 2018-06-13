@@ -12,7 +12,7 @@
         <div class="back">
           <% if memory_feeling.is_positive %>
             <!-- pig -->
-            <div class="thought-container">
+            <div class="thought-container animated pulse infinite">
               <div class="thought-area">
               <p class="thought"><%= memory_feeling.content %></p>
               <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
@@ -21,7 +21,7 @@
             </div>
           <% else %>
             <!-- baku -->
-            <div class="thought-container">
+            <div class="thought-container animated pulse infinite">
               <div class="thought-area">
                 <p class="thought"><%= memory_feeling.content %></p>
                 <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
