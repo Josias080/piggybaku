@@ -12,7 +12,15 @@
 
 .donation-header {
   background: $yellow;
-  padding: 10px 10px 125px;
+  padding: 10px 10px 90px;
+  .font-bold-subtitle {
+    line-height: 1.3;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 2px;
+  }
 }
 
 .donation-type {
@@ -33,7 +41,6 @@
 .npo-image {
   padding: 15px;
   margin-top: -110px;
-  margin-bottom: 20px;
 }
 
 .npo-description {
@@ -41,8 +48,10 @@
   padding-left: 60px;
   font-family: "Arial", "Roboto", "sans-serif";
   color: #808080;
-  line-height: 1.5;
+  line-height: 1.3;
   font-weight: lighter;
+  font-size: 18px;
+
 }
 
 .donate-amount {
