@@ -2,4 +2,4 @@ meta_product_name: "Piggy Baku"
 meta_title: "Piggy Baku - Secret bank for sensitive people"
 meta_description: "Feelings diary for sensitive people "
 meta_image: "cover.png"                       # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+twitter_account: "@piggybaku"   # required for Twitter Cards
