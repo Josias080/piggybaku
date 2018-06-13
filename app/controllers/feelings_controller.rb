@@ -20,20 +20,20 @@ class FeelingsController < ApplicationController
     @price = @feeling.price_cents
   end
 
-  def buried
-    @buried_feelings = Feeling.where(is_buried: true).order(id: "DESC")
+  def memory
+    @memory_feelings = Feeling.where(is_buried: true).order(id: "DESC")
   end
 
   def bury
     @feeling.update(is_buried: true)
-    redirect_to buried_feelings_path
+    redirect_to memory_feelings_path
   end
 
   def like
     @feeling.flowers += 1
     @feeling.save
     respond_to do |format|
-      format.html { redirect_to buried_feelings_path }
+      format.html { redirect_to memory_feelings_path }
       format.js
     end
   end
