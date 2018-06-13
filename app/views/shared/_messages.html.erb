@@ -6,16 +6,16 @@
     </div>
     <div class="record-body">
       <% if feeling.is_positive %>
-        <p class="status"><span class="flag font-round-title stored">stored</span></p>
+        <p class="status">
+          <span class="flag font-round-title stored">stored</span>
+          <span class="icon"><%= image_tag 'heart-icon.png', :class => "flower-icon" %> </span>
+          <span class="badge badge-warning"> <%= feeling.flowers %> </span>
+          </p>
         <p class="thought"><%= feeling.content %></p>
       <% else %>
         <p class="status">
           <span class="flag font-round-title forgot">forgot</span>
-          <% if feeling.is_positive %>
-            <span class="icon"><i class="fas fa-hand-holding-usd"></i></span>
-          <% else %>
-            <span class="icon"><%= image_tag 'flower_pink.png', :class => "flower-icon" %> </span>
-          <% end %>
+          <span class="icon"><%= image_tag 'heart-icon.png', :class => "flower-icon" %> </span>
           <span class="badge badge-info"> <%= feeling.flowers %> </span>
         </p>
         <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
