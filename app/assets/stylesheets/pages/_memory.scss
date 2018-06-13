@@ -1,6 +1,8 @@
 body.action-name-memory {
   background: $light-gray;
-      background-image: image-url("grass.png");
+
+  // background-repeat: no-repeat;
+  // background-color: #f3f7ba;
 }
 .action-name-memory {
   background: #dbdbdb;
@@ -26,6 +28,7 @@ body.action-name-memory {
       border-radius: 5px;
     }
     .memory-lane-area {
+      background-image: image-url("grass_long.png");
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
