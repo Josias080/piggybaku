@@ -21,7 +21,7 @@ gem 'simple_form'
 gem 'stripe'
 gem 'uglifier'
 gem 'webpacker'
-
+gem 'swiper-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

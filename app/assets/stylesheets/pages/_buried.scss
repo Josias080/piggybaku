@@ -3,11 +3,17 @@
   nav {
     background: $light-blue;
   }
-  .top-container {
-    background: $light-blue;
-    text-align: center;
-    color: #fff;
-    height: 400px;
+  .memorylane-page {
+    .top-container {
+      background: $light-blue;
+      text-align: center;
+      color: #fff;
+      height: 400px;
+
+      p {
+        padding:10px;
+      }
+    }
     .memorylane-title {
       font-size: 35px;
       padding: 10px;
@@ -17,42 +23,40 @@
       border: 5px solid #fff;
       border-radius: 5px;
     }
-    p {
-      padding:10px;
-    }
-  }
-  .graveyard-container {
-    .graveyard-title {
-      color: #fff;
-      text-align: center;
-    }
-    .graveyard {
+    .memory-lane-area {
       width: 600px;
       margin: -100px auto 0;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      .gravestone {
-        width: 100%;
+      .flip-container {
+        // width: 100%;
         margin-bottom: 10px;
         margin: 2em 0;
         color: #FFF;
+        .front {
+          img {
+            width: 100%;
+          }
+        }
         .thought-area {
-        color: #b3b3b3;
-        text-align:center;
-        height: 200px;
-        background: $light-gray;
-        word-break: break-all;
-        height: 300px;
-        padding: 10px;
+          background: $light-gray;
+          padding: 10px;
+          .thought {
+            color: #808080;
+            text-align:center;
+            overflow: scroll;
+            height: 50px;
+            word-break: break-all;
+          }
           .date {
+            color: #808080;
             display:block;
             font-size: 14px;
           }
         }
         .icon-area {
-          background: $light-gray;
-          .like_feeling {
+          .flower_feeling {
             display:flex;
             align-item: center;
             padding: 10px;
@@ -78,10 +82,62 @@
   }
 }
 
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  perspective: 1000;
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 320px;
+  height: 200px;
+}
+
+/* flip speed goes here */
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
 @media (max-width: 768px) {
   .action-name-buried {
-    .graveyard-container {
-      .graveyard {
+    .memorylane-page {
+      .memory-lane-area {
         width: 96%;
         margin: -100px 2% 0;
       }
