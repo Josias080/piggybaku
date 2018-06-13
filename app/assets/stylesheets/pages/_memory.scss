@@ -1,15 +1,17 @@
+body.action-name-memory {
+  background: $light-gray;
+}
 .action-name-memory {
   background: #dbdbdb;
   nav {
-    background: $light-blue;
+    background: $yellow;
   }
   .memorylane-page {
     .top-container {
-      background: $light-blue;
+      // background-image: image-url("green_bg.jpg");
+      background: $yellow;
       text-align: center;
       color: #fff;
-      height: 400px;
-
       p {
         padding:10px;
       }
@@ -24,23 +26,39 @@
       border-radius: 5px;
     }
     .memory-lane-area {
-      width: 600px;
-      margin: -100px auto 0;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      .flip-container {
-        // width: 100%;
-        margin-bottom: 10px;
-        margin: 2em 0;
-        color: #FFF;
-        .front {
-          img {
-            width: 100%;
+      margin-top: -100px;
+      .memory-container {
+        width: 650px;
+        margin: 0 auto;
+        .thought-container {
+          background: #fff;
+          position: relative;
+          border-radius: 10px;
+          &:before {
+            content: "";
+            position: absolute;
+            right: 24px;
+            width: 20px;
+            height: 18px;
+            bottom: -10px;
+            background: #fff;
+            border-radius: 50%;
           }
-        }
+          &:after {
+            content: "";
+            position: absolute;
+            right: 38px;
+            width: 20px;
+            height: 18px;
+            bottom: -30px;
+            background: #fff;
+            border-radius: 50%;
+          }
         .thought-area {
-          background: $light-gray;
+          width: 250px;
           padding: 10px;
           .thought {
             color: #808080;
@@ -60,10 +78,10 @@
             display:flex;
             align-item: center;
             padding: 10px;
-            color: #b3b3b3;
+            color: $pink;
             font-size: 14px;
             &:hover {
-              color: $pink;
+              color: $red;
               opacity: 0.8;
               text-decoration: none;
             }
@@ -77,69 +95,61 @@
             }
           }
         }
+        }
       }
     }
   }
 }
-
-.flip-container {
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  perspective: 1000;
+.pig-front figure svg {
+    width: 250px;
+    padding: 20px 0;
 }
-  /* flip the pane when hovered */
-  .flip-container:hover .flipper, .flip-container.hover .flipper {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+.baku-front {
+  figure {
+      svg {
+      width: 250px;
+      padding: 0 20px;
+      }
+  }
+  #bakuEatAnime {
+     display: inline-block;
+     overflow: visible;
+  }
+  #head {
+      animation: headmove 1.5s ease-in-out infinite alternate;
+  }
+  #tail {
+      transform-origin: 100% 0%;
+      animation: tailmove 1.5s ease-in-out 0s infinite alternate;
   }
 
-.flip-container, .front, .back {
-  width: 320px;
-  height: 200px;
+
+  @keyframes headmove {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform:translateX(5px) translateY(-5px) rotate(10deg);
+    }
+  }
+  @keyframes tailmove {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(5%, 5%) rotate(20deg);
+    }
+  }
 }
 
-/* flip speed goes here */
-.flipper {
-  -webkit-transition: 0.6s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transition: 0.6s;
-  -moz-transform-style: preserve-3d;
-  transition: 0.6s;
-  transform-style: preserve-3d;
-
-  position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-  z-index: 2;
-}
-
-/* back, initially hidden pane */
-.back {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .action-name-memory {
     .memorylane-page {
       .memory-lane-area {
-        width: 96%;
-        margin: -100px 2% 0;
+        .memory-container {
+          width: 250px;
+          margin: 0 auto;
+        }
       }
     }
   }
