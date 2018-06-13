@@ -52,19 +52,30 @@
         </div>
         <div class="modal-link">
           <% if feeling.is_positive? %><!-- positive -->
-            <%= link_to new_feeling_donation_path(feeling) do %>
+            <h3>Do you want to spread happiness?<br>
+                donate to NPO of the month!</h3>
+            <%= link_to new_feeling_donation_path(feeling), class:"btn btn-pink" do %>
                 donate <i class="fas fa-hand-holding-usd"></i>
             <% end %>
-            <% else %><!-- negative -->
-              <h3>Got over this thought?<br>
-                Send your thought to the graveyard and share!</h3>
-                <div class="grave-button">
-                <%= simple_form_for feeling, url: bury_feeling_path(feeling), method: :put do |f| %>
-                  <%= button_tag type: :submit, class:"btn btn-pink" do %>
-                    send to graveyard<span class="grave-icon"><%= image_tag 'gravestone_white.png' %></span>
-                  <% end %>
+            <h3>Shere your happiness!<br>
+            send your thought to the memory lane.</h3>
+            <div>
+              <%= simple_form_for feeling, url: bury_feeling_path(feeling), method: :put do |f| %>
+                <%= button_tag type: :submit, class:"btn btn-blue" do %>
+                  memory lane
                 <% end %>
-              </div>
+              <% end %>
+            </div>
+            <% else %><!-- negative -->
+             <h3>You totally over it?<br>
+            send your thought to the memory lane.</h3>
+            <div>
+              <%= simple_form_for feeling, url: bury_feeling_path(feeling), method: :put do |f| %>
+                <%= button_tag type: :submit, class:"btn btn-blue" do %>
+                  memory lane
+                <% end %>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>

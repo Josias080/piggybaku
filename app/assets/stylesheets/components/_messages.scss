@@ -104,7 +104,7 @@
   .modal-link {
     border-top: none;
     padding: 15px;
-        background: #fff;
+    background: #fff;
     margin: 10px;
     border-radius: 5px;
     box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -113,9 +113,11 @@
     }
     button{
     color: #fff;
-    width: 35%;
     border-radius: 4px;
-    margin-left: 65%;
+    }
+    .btn {
+      width: auto;
+      color: #fff;
     }
     .grave-icon {
       width: 25px;
