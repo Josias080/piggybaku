@@ -7,13 +7,13 @@
   </div>
   <div class="graveyard">
     <!-- gravestone -->
-    <% @buried_feelings.each do |buried_feeling| %>
+    <% @memory_feelings.each do |memory_feeling| %>
       <div class="gravestone">
         <div class="thought-area">
-        <%= buried_feeling.content %>
-        <span class="date"><%= buried_feeling.created_at.strftime("%d %b %Y") %></span>
+        <%= memory_feeling.content %>
+        <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
         </div>
-      <%= render partial: "flower", locals: { buried_feeling: buried_feeling } %>
+      <%= render partial: "flower", locals: { memory_feeling: memory_feeling } %>
       </div>
     <% end %>
     <!-- /gravestone -->
