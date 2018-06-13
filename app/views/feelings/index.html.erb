@@ -12,120 +12,14 @@
     </h2>
   </div>
   <div class="chart-container">
-    <table>
-      <div id="container">
-        <div class="week">
-          <% if @week_feelings["Mon"].present? %>
-            <% @week_feelings["Mon"].each do |feeling| %>
-              <% if feeling.is_positive %>
-                <div class="animal-img">
-                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
-                </div>
-              <% else %>
-                <div class="animal-img">
-                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="week">
-          <% if @week_feelings["Tue"].present? %>
-            <% @week_feelings["Tue"].each do |feeling| %>
-              <% if feeling.is_positive %>
-                <div class="animal-img">
-                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
-                </div>
-              <% else %>
-                <div class="animal-img">
-                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="week">
-          <% if @week_feelings["Wed"].present? %>
-            <% @week_feelings["Wed"].each do |feeling| %>
-              <% if feeling.is_positive %>
-                <div class="animal-img">
-                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
-                </div>
-              <% else %>
-                <div class="animal-img">
-                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="week">
-          <% if @week_feelings["Thu"].present? %>
-            <% @week_feelings["Thu"].each do |feeling| %>
-              <% if feeling.is_positive %>
-                <div class="animal-img">
-                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
-                </div>
-              <% else %>
-                <div class="animal-img">
-                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="week">
-          <% if @week_feelings["Fri"].present? %>
-            <% @week_feelings["Fri"].each do |feeling| %>
-              <% if feeling.is_positive %>
-                <div class="animal-img">
-                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
-                </div>
-              <% else %>
-                <div class="animal-img">
-                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="week">
-          <% if @week_feelings["Sat"].present? %>
-            <% @week_feelings["Sat"].each do |feeling| %>
-              <% if feeling.is_positive %>
-                <div class="animal-img">
-                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
-                </div>
-              <% else %>
-                <div class="animal-img">
-                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="week">
-          <% if @week_feelings["Sun"].present? %>
-            <% @week_feelings["Sun"].each do |feeling| %>
-              <% if feeling.is_positive %>
-                <div class="animal-img">
-                  <%= image_tag 'pig.png', class: "mitarashi poyon" %>
-                </div>
-              <% else %>
-                <div class="animal-img">
-                  <%= image_tag 'baku.png', class: "mitarashi poyon" %>
-                </div>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </table>
+      <table>
+        <%= render partial: "week" %>
+      </table>
   </div>
   <div class="record-container">
     <div class="record-wrap onhidden">
       <h2 class="font-round-title">Bank Activity</h2>
-      <%= render partial: "shared/messages", feeling: @feelings %>
+      <%= render partial: "shared/messages" %>
       <div class="readmore"><span>display more</span><i class="fas fa-angle-double-down"></i></div>
     </div>
     <div class="total-money text-right">
@@ -153,7 +47,8 @@
           element.classList.remove(className);
         });
 
-        element.addEventListener("touchstart", (event) => {
+        var mytap = window.ontouchstart === null? "touchstart" : "click";
+        element.addEventListener(mytap, (event) => {
           event.preventDefault();
 
           setTimeout(() => {
@@ -165,5 +60,7 @@
 
 
   looopAnimation(".mitarashi", "poyon", 300);
+
+    const weekMonth = document.findById
   </script>
 <% end %>

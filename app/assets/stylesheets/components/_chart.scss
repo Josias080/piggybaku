@@ -1,9 +1,24 @@
-#container {
-  display: flex;
+.chart-container {
+  .animal-img {
+    width: 100%;
+  }
 }
 
-.week {
+#container {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.week, .month {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  width: 50px;
+  text-align: center;
+  p {
+    margin-top: 10px;
+  }
 }
+
+
