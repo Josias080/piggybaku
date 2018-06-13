@@ -10,6 +10,7 @@ class FeelingsController < ApplicationController
     @negative_count = @feelings.where(is_positive: false).count
     @positive_count = @feelings.where(is_positive: true).count
     @week_feelings = @feelings.group_by { |f| f.created_at.strftime('%a') }
+    @month_feelings = @feelings.group_by { |f| f.created_at.strftime('%b')}
   end
 
   def show
