@@ -18,7 +18,7 @@ class DonationsController < ApplicationController
     )
 
     @feeling.update(donation: charge.to_json, is_donated: true)
-    redirect_to feelings_path(@feeling)
+    redirect_to thankyou_feeling_path(@feeling)
 
     rescue Stripe::CardError => e
     flash[:alert] = e.message
