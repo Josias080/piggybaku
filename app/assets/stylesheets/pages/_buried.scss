@@ -1,17 +1,24 @@
 .action-name-buried {
   background: #dbdbdb;
+  nav {
+    background: $light-blue;
+  }
   .top-container {
+    background: $light-blue;
     text-align: center;
     color: #fff;
     height: 400px;
-    h1 {
-      padding-bottom: 10px;
+    .memorylane-title {
+      font-size: 35px;
+      padding: 10px;
+      background: #559d8c;
+      width: 80%;
+      margin: 0 10%;
+      border: 5px solid #fff;
+      border-radius: 5px;
     }
     p {
       padding:10px;
-    }
-    h1, p {
-      font-family: 'Merriweather', serif;
     }
   }
   .graveyard-container {
@@ -26,33 +33,24 @@
       justify-content: space-between;
       flex-wrap: wrap;
       .gravestone {
-        width: 46%;
+        width: 100%;
         margin-bottom: 10px;
         margin: 2em 0;
         color: #FFF;
-        background: $light-gray;
-        border-top: solid 20px #b3b3b3;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-        font-family: 'Merriweather', serif;
         .thought-area {
         color: #b3b3b3;
         text-align:center;
         height: 200px;
-        border: 1px solid #ddd;
         background: $light-gray;
         word-break: break-all;
         height: 300px;
         padding: 10px;
-        border-radius: 6px;
-        margin: 2px;
           .date {
             display:block;
             font-size: 14px;
           }
         }
         .icon-area {
-          border: 1px solid #b3b3b3;
-          border-top: 3px solid #b3b3b3;
           background: $light-gray;
           .like_feeling {
             display:flex;
@@ -86,9 +84,6 @@
       .graveyard {
         width: 96%;
         margin: -100px 2% 0;
-        .gravestone {
-          width: 48%;
-        }
       }
     }
   }
