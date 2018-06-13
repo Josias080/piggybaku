@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :feelings do
     member do
       get 'confirmation'
+      get 'thankyou'
       put 'bury'
       put 'like', to: "feelings#like"
     end
