@@ -60,4 +60,3 @@ $(function(){
       $('.onhidden').css('height','425px');
     }
 });
-

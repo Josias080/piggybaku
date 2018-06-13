@@ -1,0 +1,21 @@
+<div class="graveyard-container">
+  <div class="top-container">
+    <h1 class="memorylane-title">
+        Momory Lane
+    </h1>
+    <p>Here, you can meet all the animals<br> set to be free!</p>
+  </div>
+  <div class="graveyard">
+    <!-- gravestone -->
+    <% @memory_feelings.each do |memory_feeling| %>
+      <div class="gravestone">
+        <div class="thought-area">
+        <%= memory_feeling.content %>
+        <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
+        </div>
+      <%= render partial: "flower", locals: { memory_feeling: memory_feeling } %>
+      </div>
+    <% end %>
+    <!-- /gravestone -->
+  </div>
+</div>

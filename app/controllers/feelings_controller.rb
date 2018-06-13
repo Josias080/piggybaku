@@ -1,6 +1,6 @@
 class FeelingsController < ApplicationController
    skip_before_action :authenticate_user!, only: [ :new, :create ]
-   before_action :set_feeling, only: [ :bury, :like, :unlike, :show, :confirmation, :edit, :update, :destroy ]
+   before_action :set_feeling, only: [ :bury, :like, :show, :confirmation, :edit, :update, :destroy ]
 
   def index
     # if current_or_guest_user
@@ -10,6 +10,7 @@ class FeelingsController < ApplicationController
     @negative_count = @feelings.where(is_positive: false).count
     @positive_count = @feelings.where(is_positive: true).count
     @week_feelings = @feelings.group_by { |f| f.created_at.strftime('%a') }
+    @month_feelings = @feelings.group_by { |f| f.created_at.strftime('%b')}
   end
 
   def show
@@ -19,20 +20,21 @@ class FeelingsController < ApplicationController
     @price = @feeling.price_cents
   end
 
-  def buried
-    @buried_feelings = Feeling.where(is_buried: true).order(id: "DESC")
+  def memory
+    @memory_feelings = Feeling.where(is_buried: true).order(id: "DESC")
   end
 
   def bury
     @feeling.update(is_buried: true)
-    redirect_to buried_feelings_path
+    redirect_to memory_feelings_path
   end
 
   def like
-    @feeling.vote_by voter: current_user, :duplicate => true
+    @feeling.flowers += 1
+    @feeling.save
     respond_to do |format|
-      format.html { redirect_back fallback_location: buried_feelings_path }
-      format.js { render layout: false }
+      format.html { redirect_to memory_feelings_path }
+      format.js
     end
   end
 

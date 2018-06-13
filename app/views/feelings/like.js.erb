@@ -1,0 +1,6 @@
+function addFlower(innerHTML) {
+  const flowers = document.getElementById("flower_box_<%= @feeling.id %>");
+  flowers.outerHTML = innerHTML;
+}
+
+addFlower('<%= j render partial: "flower", locals: { memory_feeling: @feeling } %>');

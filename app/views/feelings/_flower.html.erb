@@ -1,0 +1,6 @@
+<div class="icon-area" id="flower_box_<%= memory_feeling.id %>">
+    <%= link_to like_feeling_path(memory_feeling), remote: true, method: :put, class: "flower_feeling" do %>
+      <span class="icon"><%= image_tag 'flower_pink.png' %></span>
+      <span class="flower_count"><%= pluralize(memory_feeling.flowers, 'Flower') %></span>
+    <% end %>
+</div>

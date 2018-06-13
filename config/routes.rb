@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       put 'like', to: "feelings#like"
     end
     collection do
-      get 'buried'
+      get 'memory'
     end
     resources :donations, only: [:new, :create]
   end
