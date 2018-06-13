@@ -14,19 +14,7 @@
         <%= buried_feeling.content %>
         <span class="date"><%= buried_feeling.created_at.strftime("%d %b %Y") %></span>
         </div>
-        <div class="icon-area">
-          <% if user_signed_in? %>
-            <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
-              <span class="icon"><%= image_tag 'flower_pink.png' %></span>
-              <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'flowers') %></span>
-            <% end %>
-          <% else %>
-          <%= link_to like_feeling_path(buried_feeling), method: :put, class: "like_feeling" do %>
-              <span class="icon"><%= image_tag 'flower_pink.png' %></span>
-              <span class="vote_count"><%= pluralize(buried_feeling.get_likes.size, 'flowers') %></span>
-            <% end %>
-          <% end %>
-        </div>
+      <%= render partial: "flower", locals: { buried_feeling: buried_feeling } %>
       </div>
     <% end %>
     <!-- /gravestone -->
