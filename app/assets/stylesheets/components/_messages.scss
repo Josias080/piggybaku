@@ -47,6 +47,12 @@
       .status {
         display: flex;
         align-items: center;
+        .donated-icon {
+          opacity: 0.9;
+        }
+        .donate-icon {
+          opacity: 0.2;
+        }
       }
     }
   }
