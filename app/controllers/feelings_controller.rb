@@ -5,11 +5,12 @@ class FeelingsController < ApplicationController
   def index
     # if current_or_guest_user
       # @positive_feelings = current_or_guest_user.feelings.where(user: current_user, is_positive: true).order(id: "DESC")
-    @feelings = Feeling.where(user: current_or_guest_user).order(id: "DESC")
+    @feelings = Feeling.where(user: current_or_guest_user).order(created_at: "DESC")
     # end
     @negative_count = @feelings.where(is_positive: false).count
     @positive_count = @feelings.where(is_positive: true).count
-    @week_feelings = @feelings.group_by { |f| f.created_at.strftime('%a') }
+    @this_week_feeelings = @feelings.where("created_at > ?", Time.now.beginning_of_week)
+    @week_feelings = @this_week_feeelings.group_by { |f| f.created_at.strftime('%a') }
     @month_feelings = @feelings.group_by { |f| f.created_at.strftime('%b')}
   end
 
@@ -21,7 +22,7 @@ class FeelingsController < ApplicationController
   end
 
   def memory
-    @memory_feelings = Feeling.where(is_buried: true).order(id: "DESC")
+    @memory_feelings = Feeling.where(is_buried: true).order(created_at: "DESC")
   end
 
   def bury
