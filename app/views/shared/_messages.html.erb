@@ -8,7 +8,7 @@
       <% if feeling.is_positive %>
         <p class="status">
           <span class="flag font-round-title stored">stored</span>
-          <span class="icon"><%= image_tag 'heart-icon.png', :class => "flower-icon" %></span>
+          <span class="icon"><i class="fas fa-heart"></i></span>
           <span class="badge badge-warning"><%= feeling.flowers %></span>
           <% if feeling.is_donated %>
             <span class="icon donated-icon"><i class="fas fa-hand-holding-usd"></i>
@@ -20,7 +20,7 @@
       <% else %>
         <p class="status">
           <span class="flag font-round-title forgot">forgot</span>
-          <span class="icon"><%= image_tag 'heart-icon.png', :class => "flower-icon" %></span>
+          <span class="icon"><i class="fas fa-heart"></i></span>
           <span class="badge badge-info"><%= feeling.flowers %></span>
         </p>
         <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>

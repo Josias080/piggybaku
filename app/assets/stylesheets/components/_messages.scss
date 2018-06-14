@@ -18,7 +18,7 @@
     }
     &:hover {
       text-decoration: none;
-      color: #4d4d4d;
+      opacity: 0.8;
     }
     .flag {
       display: block;
@@ -58,13 +58,13 @@
 
 .icon{
   padding-left: 10px;
+  .fa-heart {
+    color: $pink;
+    font-size: 14px;
+  }
   .flower-icon {
     width: 16px;
   }
-}
-
-.donated-icon {
-  color: $pink;
 }
 
 .modal-content {
@@ -75,7 +75,6 @@
     height: 56px;
     .close {
       margin-top: -26px;
-      // display: none;
     }
   }
   .modal-body {
@@ -136,48 +135,13 @@
 
 
 .badge {
-  padding: 1px 9px 2px;
-  font-size: 12.025px;
-  font-weight: bold;
-  white-space: nowrap;
-  color: #ffffff;
-  background-color: #999999;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
+  color: $pink;
+  padding-left: 3px;
+  font-size: 12px;
+  font-weight: normal;
+  background-color: white;
 }
 .badge:hover {
-  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
-}
-.badge-error {
-  background-color: #b94a48;
-}
-.badge-error:hover {
-  background-color: #953b39;
-}
-.badge-warning {
-  background-color: #F0866B;
-}
-.badge-warning:hover {
-  background-color: #c67605;
-}
-.badge-success {
-  background-color: #468847;
-}
-.badge-success:hover {
-  background-color: #356635;
-}
-.badge-info {
-  background-color: #81C4D5;
-}
-.badge-info:hover {
-  background-color: #2d6987;
-}
-.badge-inverse {
-  background-color: #333333;
-}
-.badge-inverse:hover {
-  background-color: #1a1a1a;
 }

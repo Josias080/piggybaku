@@ -1,14 +1,11 @@
 .controller-name-feelings.action-name-index{
   .wrapper {
-    // background: $yellow;
     outline: none;
   }
 }
 .action-name-index {
-  .bankactivity-wrapper {
-    .chart-container {
-      padding: 10px;
-    }
+  h2.font-bold-title {
+    font-size: 30px;
   }
   .chart-container {
     margin-top: -50px;
