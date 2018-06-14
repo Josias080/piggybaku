@@ -39,7 +39,6 @@ test_feelings_data = [
     content: "I always hate getting flashbacks from things that I don’t want to remember.",
     price_cents: 700,
     is_positive: false,
-    user_id: 2,
     is_buried: true,
     flowers: 2,
   },
@@ -47,7 +46,6 @@ test_feelings_data = [
     content: "I can't understand what's going on in class.",
     price_cents: 500,
     is_positive: false,
-    user_id: 1,
     is_buried: true,
     flowers: 4,
   },
@@ -56,7 +54,6 @@ test_feelings_data = [
     price_cents: 500,
     is_positive: true,
     is_donated: true,
-    user_id: 1,
     is_buried: true,
     flowers: 9,
   },
@@ -64,7 +61,6 @@ test_feelings_data = [
     content: "Still got a C for maths even though I practiced so much..",
     price_cents: 700,
     is_positive: false,
-    user_id: 1,
     is_buried: true,
     flowers: 1,
   },
@@ -73,7 +69,6 @@ test_feelings_data = [
     price_cents: 800,
     is_positive: false,
     is_donated: true,
-    user_id: 2,
     is_buried: true,
     flowers: 11,
   },
@@ -81,7 +76,6 @@ test_feelings_data = [
     content: "I’m a fake and I’m going to be found out.",
     price_cents: 800,
     is_positive: false,
-    user_id: 2,
     is_buried: true,
     flowers: 20,
   },
@@ -89,7 +83,6 @@ test_feelings_data = [
     content: "I managed to find a mistake that would have crashed the program.",
     price_cents: 1000,
     is_positive: true,
-    user_id: 2,
     is_buried: true,
     flowers: 4,
   },
@@ -98,7 +91,6 @@ test_feelings_data = [
     price_cents: 800,
     is_positive: true,
     is_donated: true,
-    user_id: 2,
     is_buried: true,
     flowers: 8,
   },
@@ -107,7 +99,6 @@ test_feelings_data = [
     price_cents: 400,
     is_positive: true,
     is_donated: true,
-    user_id: 2,
     is_buried: true,
     flowers: 30,
   },
@@ -115,7 +106,6 @@ test_feelings_data = [
     content: "Got stuck on fizzbuzz whut.",
     price_cents: 300,
     is_positive: false,
-    user_id: 2,
     is_buried: true,
     flowers: 14,
   },
@@ -123,7 +113,6 @@ test_feelings_data = [
     content: "I’m useless and people will know",
     price_cents: 900,
     is_positive: false,
-    user_id: 2,
     is_buried: true,
     flowers: 25,
   },
@@ -131,7 +120,6 @@ test_feelings_data = [
     content: "Today my boss handed my project to Edward. Am I not good enough?",
     price_cents: 1000,
     is_positive: false,
-    user_id: 3,
     is_buried: true,
     flowers: 0,
   },
@@ -139,7 +127,6 @@ test_feelings_data = [
     content: "My colleagues ignored what I suggested again.",
     price_cents: 500,
     is_positive: false,
-    user_id: 3,
     is_buried: true,
     flowers: 9,
   },
@@ -147,7 +134,6 @@ test_feelings_data = [
     content: "Work is really boring, I'm just doing the same thing over and over again.",
     price_cents: 300,
     is_positive: false,
-    user_id: 2,
     is_buried: true,
     flowers: 11,
   },
@@ -155,7 +141,6 @@ test_feelings_data = [
     content: "Manager hinted that I might be getting promoted soon!",
     price_cents: 900,
     is_positive: true,
-    user_id: 3,
     is_buried: true,
     flowers: 22,
   },
@@ -163,7 +148,6 @@ test_feelings_data = [
     content: "I only played 5 minutes in today's basketball match.",
     price_cents: 700,
     is_positive: false,
-    user_id: 4,
     is_buried: true,
     flowers: 5,
   },
@@ -171,7 +155,6 @@ test_feelings_data = [
     content: "I managed to score 23 points on today's basketball match.",
     price_cents: 500,
     is_positive: true,
-    user_id: 4,
     is_buried: true,
     flowers: 4,
   },
@@ -179,7 +162,6 @@ test_feelings_data = [
     content: "My teammate screamed at me because he thought I wasn't trying.",
     price_cents: 1000,
     is_positive: false,
-    user_id: 4,
     is_buried: true,
     flowers: 12,
   },
@@ -187,7 +169,6 @@ test_feelings_data = [
     content: "Why is my brother so much more successful than me?",
     price_cents: 800,
     is_positive: false,
-    user_id: 2,
     is_buried: true,
     flowers: 21,
   },
@@ -196,7 +177,6 @@ test_feelings_data = [
     price_cents: 1500,
     is_positive: true,
     is_donated: true,
-    user_id: 5,
     is_buried: true,
     flowers: 30,
   },
@@ -205,7 +185,6 @@ test_feelings_data = [
     price_cents: 800,
     is_positive: true,
     is_donated: true,
-    user_id: 2,
     is_buried: true,
     flowers: 14,
   },
@@ -214,7 +193,6 @@ test_feelings_data = [
     price_cents: 700,
     is_positive: true,
     is_donated: true,
-    user_id: 2,
     is_buried: true,
     flowers: 31,
   },
@@ -222,19 +200,22 @@ test_feelings_data = [
     content: "Why am I always so careless with syntax",
     price_cents: 200,
     is_positive: false,
-    user_id: 2,
     is_buried: true,
     flowers: 5,
   },
 ]
 
-User.destroy_all
 Feeling.destroy_all
+User.destroy_all
+
 
 test_user_data.each do |user|
   User.create!(user)
 end
 
 test_feelings_data.each do |feeling|
-  Feeling.create!(feeling)
+  new_feeling = Feeling.new(feeling)
+  new_feeling.user = User.all.sample
+  new_feeling.created_at = (rand*10).days.ago
+  new_feeling.save
 end
