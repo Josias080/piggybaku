@@ -21,5 +21,8 @@ module Piggybaku
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.action_view.embed_authenticity_token_in_remote_forms = true
+
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { :api_token => "c5c2a1fc-882b-42e0-8d65-6d361890b135" }
   end
 end
