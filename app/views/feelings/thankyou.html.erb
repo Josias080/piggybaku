@@ -1,13 +1,13 @@
 <div class="yellow-header">
   <h2 class="font-bold-title">
-    <span class="font-red">Thank you</span> for <span class="marker forgot">donating!</span><br>
+    <span class="font-red">Thank you</span> for <span class="marker forgot">donating</span><br>
   </h2>
+  <h2 class="font-bold-title"> You have contributed <span class="font-red">¥<%= @feeling.price_cents %></span>! </h2>
 </div>
 
-<div class="piggy-img text-center">
-  <%= image_tag 'pig.png', :class => "animated bounce"%>
+<div class="piggy-img-container text-center">
+  <%= image_tag 'pig.png', :class => "piggy-img animated bounce img-responsive"%>
 </div>
-
 <div class="link-button-wrapper text-center">
   <%= link_to 'bank activity', feelings_path, class: "font-round-title btn btn-blue" %>
 </div>

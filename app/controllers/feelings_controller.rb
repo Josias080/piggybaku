@@ -1,6 +1,6 @@
 class FeelingsController < ApplicationController
    skip_before_action :authenticate_user!, only: [ :new, :create ]
-   before_action :set_feeling, only: [ :bury, :like, :show, :confirmation, :edit, :update, :destroy ]
+   before_action :set_feeling, only: [ :bury, :like, :thankyou, :show, :confirmation, :edit, :update, :destroy ]
 
   def index
     # if current_or_guest_user
@@ -36,6 +36,9 @@ class FeelingsController < ApplicationController
       format.html { redirect_to memory_feelings_path }
       format.js
     end
+  end
+
+  def thankyou
   end
 
   def new

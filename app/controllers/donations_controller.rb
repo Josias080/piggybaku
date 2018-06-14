@@ -1,6 +1,7 @@
 class DonationsController < ApplicationController
   def new
     @feeling = Feeling.find(params[:feeling_id])
+    @feelings = Feeling.all
   end
 
   def create
