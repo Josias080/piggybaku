@@ -26,6 +26,16 @@
     <div class="npo-description text-center text-justify font-weight-light">
       <p> Second Harvest Japan aims to provide everyone with access to safe and nutritious food on a daily basis. To do so, they deliver food to children's homes, single-mother shelters, centers for the disabled as well as many other welfare organizations and individuals in need. All your donations go towards delivering food to those in need. For every 25 yen you donate, they are able to provide one meal to those in need. </p>
   </div>
+
+  <div class="amount-donated-wrapper">
+    <% donatedSum = 0 %>
+    <% @feelings.each do |feeling| %>
+      <% if feeling.is_donated %>
+      <% donatedSum += feeling.price_cents %>
+      <% end %>
+    <% end %>
+    <p>PiggyBaku has raised: ¥<%= donatedSum %> </p>
+  </div>
   <div class="animated rubberBand"><p> <%= image_tag 'pig_icon.png' %> </p>
   </div>
   <div>
