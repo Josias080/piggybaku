@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :feelings, dependent: :destroy
   validates :username, presence: true
   acts_as_voter
+  after_create :send_welcome_email
 
   def self.new_guest
     new do |u|
@@ -18,4 +19,11 @@ class User < ApplicationRecord
   def move_to(user)
     feelings.update_all(user_id: user.id)
   end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
 end
