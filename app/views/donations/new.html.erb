@@ -20,7 +20,7 @@
     </div> -->
     <div class="npo-image text-center">
       <div class="text-center">
-        <%= image_tag 'second_harvest.jpg', class: "img-responsive" %>
+        <%= image_tag 'second_harvest.jpg', class: "donation-img img-responsive" %>
       </div>
     </div>
     <div class="npo-description text-center text-justify font-weight-light">
@@ -41,7 +41,7 @@
         data-amount="<%= @feeling.price_cents %>"
         data-currency="<%= @feeling.price_currency %>"
         data-label="Donate ¥<%= @feeling.price %>"></script>
+      </div>
     <% end %>
-    </div>
   </div>
 </div>

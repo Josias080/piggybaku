@@ -4,8 +4,13 @@
   padding-bottom: 125px;
 }
 
-.piggy-img {
+.piggy-img-container {
   margin-top: -120px;
+  .piggy-img {
+    width: 50%;
+    margin: 0 25%;
+  }
+
 }
 
 .link-button-wrapper {
