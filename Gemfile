@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'stripe'
 gem 'uglifier'
 gem 'webpacker'
+gem 'postmark-rails'
 
 
 
