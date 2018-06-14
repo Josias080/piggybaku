@@ -13,7 +13,7 @@
         <% end %>
       <% end %>
     <% end %>
-    <p>Mon</p>
+    <p class="<%= 'today' if Time.now.strftime('%a') == 'Mon' %>">Mon</p>
   </div>
   <div class="week">
     <% if @week_feelings["Tue"].present? %>
@@ -29,7 +29,7 @@
         <% end %>
       <% end %>
     <% end %>
-    <p>Tue</p>
+    <p class="<%= 'today' if Time.now.strftime('%a') == 'Tue' %>">Tue</p>
   </div>
   <div class="week">
     <% if @week_feelings["Wed"].present? %>
@@ -45,7 +45,7 @@
         <% end %>
       <% end %>
     <% end %>
-    <p>Wed</p>
+    <p class="<%= 'today' if Time.now.strftime('%a') == 'Wed' %>">Wed</p>
   </div>
   <div class="week">
     <% if @week_feelings["Thu"].present? %>
@@ -61,7 +61,7 @@
         <% end %>
       <% end %>
     <% end %>
-    <p>Thu</p>
+    <p class="<%= 'today' if Time.now.strftime('%a') == 'Thu' %>">Thu</p>
   </div>
   <div class="week">
     <% if @week_feelings["Fri"].present? %>
@@ -77,7 +77,7 @@
         <% end %>
       <% end %>
     <% end %>
-    <p>Fri</p>
+    <p class="<%= 'today' if Time.now.strftime('%a') == 'Fri' %>">Fri</p>
   </div>
   <div class="week">
     <% if @week_feelings["Sat"].present? %>
@@ -93,7 +93,7 @@
         <% end %>
       <% end %>
     <% end %>
-    <p>Sat</p>
+    <p class="<%= 'today' if Time.now.strftime('%a') == 'Sat' %>">Sat</p>
   </div>
   <div class="week">
     <% if @week_feelings["Sun"].present? %>
@@ -109,6 +109,6 @@
         <% end %>
       <% end %>
     <% end %>
-    <p>Sun</p>
+    <p class="<%= 'today' if Time.now.strftime('%a') == 'Sun' %>">Sun</p>
   </div>
 </div>
