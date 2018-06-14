@@ -1,0 +1,53 @@
+.img-style {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+#about {
+  justify-content: space-around;
+  text-align: center;
+  display: flex;
+
+  h2 {
+    font-size: 17px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.6);
+  }
+  p {
+      margin: 0 0 12.5px;
+  }
+  a {
+    color: rgba(0,0,0,0.25);
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    font-size: 15px;
+  }
+}
+
+.top-container h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  color: white;
+  text-align: center;
+}
+
+.list-inline >li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#team {
+  margin-top: -70px;
+}
+
+.contact {
+  text-align: center;
+  font-size:  17px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.6);
+}
