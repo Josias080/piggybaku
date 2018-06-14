@@ -11,26 +11,6 @@ test_user_data = [
     username: 'Kim',
     email: 'kim@example.com',
     password: 'password',
-  },
-  {
-    username: 'John',
-    email: 'john@example.com',
-    password: 'password',
-  },
-  {
-    username: 'Mary',
-    email: 'mary@example.com',
-    password: 'password',
-  },
-  {
-    username: 'Jack',
-    email: 'jack@example.com',
-    password: 'password',
-  },
-  {
-    username: 'Jane',
-    email: 'jane@example.com',
-    password: 'password',
   }
 ]
 
