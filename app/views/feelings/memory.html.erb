@@ -4,7 +4,16 @@
       <h1 class="memorylane-title">
           Memory Lane
       </h1>
+      <div class="link">
+        <%= link_to root_path, class: "" do %>
+          <i class="fas fa-home"></i>home<i class="fas fa-arrow-circle-right"></i>
+        <% end %>
+        <%= link_to feelings_path, class: "" do %>
+          <i class="fas fa-chart-bar"></i>bank activity<i class="fas fa-arrow-circle-right"></i>
+        <% end %>
+      </div>
       <p>Here, you can meet all the animals<br> that have been set free!</p>
+    </p>
     </div>
     <div class="memory-lane-area">
       <!-- thought -->
