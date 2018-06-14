@@ -35,10 +35,10 @@
     .marker {
       padding: 0 10px;
       &.forgot {
-        background: linear-gradient(transparent 60%, $light-blue 60%);
+        background: linear-gradient(transparent 60%, $pink 60%);
       }
       &.stored {
-        background: linear-gradient(transparent 60%, $pink 60%);
+        background: linear-gradient(transparent 60%, $light-blue 60%);
       }
     }
   }
