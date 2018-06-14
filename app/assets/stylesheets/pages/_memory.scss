@@ -5,6 +5,9 @@ body.action-name-memory {
   // background-color: #f3f7ba;
 }
 .action-name-memory {
+  .wrapper {
+    padding-bottom: 0;
+  }
   background: #dbdbdb;
   nav {
     background: $yellow;
@@ -28,7 +31,9 @@ body.action-name-memory {
       border-radius: 5px;
     }
     .memory-lane-area {
-      background-image: image-url("grass_long.png");
+      background-image: image-url("green_long.png");
+      background-repeat: repeat-y;
+      background-size: cover;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -36,6 +41,9 @@ body.action-name-memory {
       .memory-container {
         width: 650px;
         margin: 0 auto;
+        &:first-child {
+          margin-top: -30px !important;
+        }
         .thought-container {
           background: #fff;
           position: relative;
@@ -68,7 +76,7 @@ body.action-name-memory {
             text-align:center;
             overflow: scroll;
             height: 50px;
-            word-break: break-all;
+            text-align: left;
           }
           .date {
             color: #808080;
@@ -149,6 +157,7 @@ body.action-name-memory {
   .action-name-memory {
     .memorylane-page {
       .memory-lane-area {
+        background-size: contain;
         .memory-container {
           width: 250px;
           margin: 0 auto;
