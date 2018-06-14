@@ -52,6 +52,7 @@
     .record-wrap {
       &.onhidden {
         overflow-y:hidden;
+        height: 425px;
       }
       .readmore{
         position:absolute;
@@ -73,13 +74,13 @@
           padding-left: 5px;
         }
       }
-      h2.font-round-title {
-        background: #808080;
-        color: #fff;
-        margin:0;
-        padding: 10px 0;
-        text-align: center;
-      }
+        h2.font-round-title {
+          background: #808080;
+          color: #fff;
+          margin:0;
+          padding: 10px 0;
+          text-align: center;
+        }
     }
   }
 }
