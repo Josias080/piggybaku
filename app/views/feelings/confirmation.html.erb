@@ -1,6 +1,6 @@
 <% if @feeling.is_positive %><!-- pig -->
   <div class="top-container" id="pig-confirmation">
-    <h2 class="title-confirmation font-bold-title">Yay!<br>your memory has been stored!</h2>
+    <h2 class="title-confirmation font-bold-title">Yay!<br>Your memory has been stored!</h2>
   </div>
   <div class="animal-container">
     <div class="thought-container pig-thought">
@@ -20,7 +20,7 @@
         <h4>Piggybaku<br><span>Tokyo,Japan</span></h4>
         <p class="date"><%= @feeling.created_at.strftime("%d %b %Y") %></p>
         <div class="receipt-content">
-          <p><%= @feeling.content%></p><p>¥<%= @feeling.price_cents %></p>
+          <p><%= @feeling.content%></p>
         </div>
         <p class="total">TOTAL ¥<%= @feeling.price_cents %></p>
       </div>
