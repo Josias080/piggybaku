@@ -52,11 +52,7 @@ $(function(){
     $(this).parent('.record-wrap').removeClass('onhidden');
   });
   var recordHeight = $('.record-wrap').height();
-  console.log('windowの高さは' + recordHeight + 'px');
     if(recordHeight < 425){
       $('.readmore').css('display','none');
-    }
-    else {
-      $('.onhidden').css('height','425px');
     }
 });
