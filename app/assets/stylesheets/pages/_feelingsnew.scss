@@ -17,11 +17,11 @@
       transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
       &.arrow-baku {
       top: 91px;
-      right: 0;
+      right: -10px;
       }
       &.arrow-pig {
-      top: 45px;
-      right: 0;
+      top: 30px;
+      right: -10px;
       }
     }
     img {
