@@ -8,15 +8,15 @@
       <% if feeling.is_positive %>
         <p class="status">
           <span class="flag font-round-title stored">stored</span>
-          <span class="icon"><%= image_tag 'heart-icon.png', :class => "flower-icon" %> </span>
-          <span class="badge badge-warning"> <%= feeling.flowers %> </span>
+          <span class="icon"><%= image_tag 'heart-icon.png', :class => "flower-icon" %></span>
+          <span class="badge badge-warning"><%= feeling.flowers %></span>
           </p>
         <p class="thought"><%= feeling.content %></p>
       <% else %>
         <p class="status">
           <span class="flag font-round-title forgot">forgot</span>
-          <span class="icon"><%= image_tag 'heart-icon.png', :class => "flower-icon" %> </span>
-          <span class="badge badge-info"> <%= feeling.flowers %> </span>
+          <span class="icon"><%= image_tag 'heart-icon.png', :class => "flower-icon" %></span>
+          <span class="badge badge-info"><%= feeling.flowers %></span>
         </p>
         <p class="thought">************<!-- <i class="fas fa-eye"></i> --></p>
       <% end %>

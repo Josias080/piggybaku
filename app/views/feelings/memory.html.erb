@@ -1,21 +1,44 @@
-<div class="graveyard-container">
+<div class="memorylane-page">
   <div class="top-container">
     <h1 class="memorylane-title">
-        Momory Lane
+        Memory Lane
     </h1>
     <p>Here, you can meet all the animals<br> set to be free!</p>
   </div>
-  <div class="graveyard">
-    <!-- gravestone -->
+  <div class="memory-lane-area">
+    <!-- thought -->
     <% @memory_feelings.each do |memory_feeling| %>
-      <div class="gravestone">
-        <div class="thought-area">
-        <%= memory_feeling.content %>
-        <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
+      <div class="memory-container">
+        <div class="back">
+          <% if memory_feeling.is_positive %>
+            <!-- pig -->
+            <div class="thought-container animated pulse infinite">
+              <div class="thought-area">
+              <p class="thought"><%= memory_feeling.content %></p>
+              <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
+              </div>
+            <%= render partial: "flower", locals: { memory_feeling: memory_feeling } %>
+            </div>
+          <% else %>
+            <!-- baku -->
+            <div class="thought-container animated pulse infinite">
+              <div class="thought-area">
+                <p class="thought"><%= memory_feeling.content %></p>
+                <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
+              </div>
+              <%= render partial: "flower", locals: { memory_feeling: memory_feeling } %>
+            </div>
+          <% end %>
+        </div><!-- /back -->
+        <div class="front">
+          <% if memory_feeling.is_positive %>
+            <div class="pig-front"><%= render 'shared/pig_svg' %></div>
+          <% else %>
+            <div class="baku-front"><%= render 'shared/baku_svg' %></div>
+          <% end %>
         </div>
-      <%= render partial: "flower", locals: { memory_feeling: memory_feeling } %>
       </div>
     <% end %>
-    <!-- /gravestone -->
+    <!-- /thought -->
   </div>
 </div>

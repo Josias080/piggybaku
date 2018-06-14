@@ -1,13 +1,26 @@
+body.action-name-memory {
+  background: $light-gray;
+
+  // background-repeat: no-repeat;
+  // background-color: #f3f7ba;
+}
 .action-name-memory {
+  .wrapper {
+    padding-bottom: 0;
+  }
   background: #dbdbdb;
   nav {
-    background: $light-blue;
+    background: $yellow;
   }
-  .top-container {
-    background: $light-blue;
-    text-align: center;
-    color: #fff;
-    height: 400px;
+  .memorylane-page {
+    .top-container {
+      background: $yellow;
+      text-align: center;
+      color: #fff;
+      p {
+        padding:10px;
+      }
+    }
     .memorylane-title {
       font-size: 35px;
       padding: 10px;
@@ -17,49 +30,69 @@
       border: 5px solid #fff;
       border-radius: 5px;
     }
-    p {
-      padding:10px;
-    }
-  }
-  .graveyard-container {
-    .graveyard-title {
-      color: #fff;
-      text-align: center;
-    }
-    .graveyard {
-      width: 600px;
-      margin: -100px auto 0;
+    .memory-lane-area {
+      background-image: image-url("green_long.png");
+      background-repeat: repeat-y;
+      background-size: cover;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      .gravestone {
-        width: 100%;
-        margin-bottom: 10px;
-        margin: 2em 0;
-        color: #FFF;
+      margin-top: -100px;
+      .memory-container {
+        width: 650px;
+        margin: 0 auto;
+        &:first-child {
+          margin-top: -30px !important;
+        }
+        .thought-container {
+          background: #fff;
+          position: relative;
+          border-radius: 10px;
+          &:before {
+            content: "";
+            position: absolute;
+            right: 24px;
+            width: 20px;
+            height: 18px;
+            bottom: -10px;
+            background: #fff;
+            border-radius: 50%;
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            right: 38px;
+            width: 20px;
+            height: 18px;
+            bottom: -30px;
+            background: #fff;
+            border-radius: 50%;
+          }
         .thought-area {
-        color: #b3b3b3;
-        text-align:center;
-        height: 200px;
-        background: $light-gray;
-        word-break: break-all;
-        height: 300px;
-        padding: 10px;
+          width: 250px;
+          padding: 10px;
+          .thought {
+            color: #808080;
+            text-align:center;
+            overflow: scroll;
+            height: 50px;
+            text-align: left;
+          }
           .date {
+            color: #808080;
             display:block;
             font-size: 14px;
           }
         }
         .icon-area {
-          background: $light-gray;
-          .like_feeling {
+          .flower_feeling {
             display:flex;
             align-item: center;
             padding: 10px;
-            color: #b3b3b3;
+            color: $pink;
             font-size: 14px;
             &:hover {
-              color: $pink;
+              color: $red;
               opacity: 0.8;
               text-decoration: none;
             }
@@ -73,17 +106,62 @@
             }
           }
         }
+        }
       }
     }
   }
 }
+.pig-front figure svg {
+    width: 250px;
+    padding: 20px 0;
+}
+.baku-front {
+  figure {
+      svg {
+      width: 250px;
+      padding: 0 20px;
+      }
+  }
+  #bakuEatAnime {
+     display: inline-block;
+     overflow: visible;
+  }
+  #head {
+      animation: headmove 1.5s ease-in-out infinite alternate;
+  }
+  #tail {
+      transform-origin: 100% 0%;
+      animation: tailmove 1.5s ease-in-out 0s infinite alternate;
+  }
 
-@media (max-width: 768px) {
+
+  @keyframes headmove {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform:translateX(5px) translateY(-5px) rotate(10deg);
+    }
+  }
+  @keyframes tailmove {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(5%, 5%) rotate(20deg);
+    }
+  }
+}
+
+@media (max-width: 480px) {
   .action-name-memory {
-    .graveyard-container {
-      .graveyard {
-        width: 96%;
-        margin: -100px 2% 0;
+    .memorylane-page {
+      .memory-lane-area {
+        background-size: contain;
+        .memory-container {
+          width: 250px;
+          margin: 0 auto;
+        }
       }
     }
   }
