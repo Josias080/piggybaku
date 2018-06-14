@@ -25,7 +25,8 @@
               <div class="thought-container animated pulse infinite">
                 <div class="thought-area">
                 <p class="thought"><%= memory_feeling.content %></p>
-                <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
+                <p class="price"><i class="fas fa-yen-sign"></i><%= memory_feeling.price_cents %></p>
+                <span class="date"><i class="far fa-calendar"></i><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
                 </div>
               <%= render partial: "flower", locals: { memory_feeling: memory_feeling } %>
               </div>
@@ -34,7 +35,8 @@
               <div class="thought-container animated pulse infinite">
                 <div class="thought-area">
                   <p class="thought"><%= memory_feeling.content %></p>
-                  <span class="date"><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
+                  <p class="price"><i class="fas fa-yen-sign"></i><%= memory_feeling.price_cents %></p>
+                  <span class="date"><i class="far fa-calendar"></i><%= memory_feeling.created_at.strftime("%d %b %Y") %></span>
                 </div>
                 <%= render partial: "flower", locals: { memory_feeling: memory_feeling } %>
               </div>

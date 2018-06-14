@@ -93,14 +93,21 @@ body.action-name-memory {
         .thought-area {
           width: 250px;
           padding: 10px;
+          border-bottom: 1px dashed $gray;
           .thought {
             color: #808080;
             text-align:center;
             overflow: scroll;
             height: 50px;
             text-align: left;
+            margin-bottom: 0;
           }
           .date {
+            color: #808080;
+            display:block;
+            font-size: 14px;
+          }
+          .price {
             color: #808080;
             display:block;
             font-size: 14px;
