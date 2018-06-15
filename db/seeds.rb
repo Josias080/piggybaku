@@ -15,34 +15,13 @@ test_user_data = [
 ]
 
 test_feelings_data = [
-  {
-    content: "I always hate getting flashbacks from things that I don’t want to remember.",
-    price_cents: 700,
-    is_positive: false,
-    is_buried: true,
-    flowers: 2,
-  },
+
   {
     content: "I can't understand what's going on in class.",
     price_cents: 500,
     is_positive: false,
     is_buried: true,
     flowers: 4,
-  },
-  {
-    content: "Today, my teacher told me she was proud of how much I've improved",
-    price_cents: 500,
-    is_positive: true,
-    is_donated: true,
-    is_buried: true,
-    flowers: 9,
-  },
-  {
-    content: "Still got a C for maths even though I practiced so much..",
-    price_cents: 700,
-    is_positive: false,
-    is_buried: true,
-    flowers: 1,
   },
   {
     content: "Just really tired",
@@ -125,42 +104,6 @@ test_feelings_data = [
     flowers: 22,
   },
   {
-    content: "I only played 5 minutes in today's basketball match.",
-    price_cents: 700,
-    is_positive: false,
-    is_buried: true,
-    flowers: 5,
-  },
-  {
-    content: "I managed to score 23 points on today's basketball match.",
-    price_cents: 500,
-    is_positive: true,
-    is_buried: true,
-    flowers: 4,
-  },
-  {
-    content: "My teammate screamed at me because he thought I wasn't trying.",
-    price_cents: 1000,
-    is_positive: false,
-    is_buried: true,
-    flowers: 12,
-  },
-  {
-    content: "Why is my brother so much more successful than me?",
-    price_cents: 800,
-    is_positive: false,
-    is_buried: true,
-    flowers: 21,
-  },
-  {
-    content: "Today, John asked me out!",
-    price_cents: 1500,
-    is_positive: true,
-    is_donated: true,
-    is_buried: true,
-    flowers: 30,
-  },
-  {
     content: "My friends threw me a surprise birthday party!",
     price_cents: 800,
     is_positive: true,
@@ -183,6 +126,13 @@ test_feelings_data = [
     is_buried: true,
     flowers: 5,
   },
+  {
+    content: "It feels like there are so many things to learn",
+    price_cents: 300,
+    is_positive: false,
+    is_buried: true,
+    flowers: 9,
+  }
 ]
 
 Feeling.destroy_all
