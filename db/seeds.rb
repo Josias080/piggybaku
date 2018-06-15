@@ -8,8 +8,8 @@
 
 test_user_data = [
   {
-    username: 'Kim',
-    email: 'kim@example.com',
+    username: 'Tomomi',
+    email: 'Tomomi@lewagon.com',
     password: 'password',
   }
 ]
@@ -196,6 +196,6 @@ end
 test_feelings_data.each do |feeling|
   new_feeling = Feeling.new(feeling)
   new_feeling.user = User.all.sample
-  new_feeling.created_at = (rand(8)).days.ago
+  new_feeling.created_at = (rand(1..4)).days.ago
   new_feeling.save
 end
