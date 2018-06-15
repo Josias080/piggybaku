@@ -17,6 +17,7 @@
   width: 50px;
   text-align: center;
   color: $gray;
+  font-weight: bold;
   p {
     margin-top: 10px;
     background: #ddd;
@@ -24,6 +25,7 @@
     font-size: 16px;
     &.today {
       background: $pink;
+      color: #fff;
     }
   }
 }

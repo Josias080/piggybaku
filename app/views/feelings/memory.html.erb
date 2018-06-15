@@ -22,7 +22,7 @@
           <div class="back">
             <% if memory_feeling.is_positive %>
               <!-- pig -->
-              <div class="thought-container animated pulse infinite">
+              <div class="thought-container">
                 <div class="thought-area">
                 <p class="thought"><%= memory_feeling.content %></p>
                 <p class="price"><i class="fas fa-yen-sign"></i><%= memory_feeling.price_cents %></p>
@@ -32,7 +32,7 @@
               </div>
             <% else %>
               <!-- baku -->
-              <div class="thought-container animated pulse infinite">
+              <div class="thought-container">
                 <div class="thought-area">
                   <p class="thought"><%= memory_feeling.content %></p>
                   <p class="price"><i class="fas fa-yen-sign"></i><%= memory_feeling.price_cents %></p>

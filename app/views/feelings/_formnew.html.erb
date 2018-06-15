@@ -2,7 +2,7 @@
 <% if is_baku %>
   <%= simple_form_for @feeling do |f| %>
 
-    <h3 class="font-round-title"><span class="display-block">what do you want to </span><span class="font-pink">forget?</span></h3>
+    <h3 class="font-round-title"><!-- <span class="display-block"> -->what do you want to<!--  </span> --><span class="font-pink">forget?</span></h3>
 
   <%= f.input :content, label: false, error: false do %>
     <%= f.label :content do %>
@@ -38,7 +38,7 @@
     <%= f.label :content do %>
     <i class="fas fa-pencil-alt"></i>
     <% end %>
-    <%= f.input :content, placeholder: 'memory you want to store' , wrapper: false, label: false %>
+    <%= f.input :content, placeholder: 'Memory you want to store' , wrapper: false, label: false %>
   <% end %>
 
     <h3 class="font-round-title">set a <span class="font-light-blue">price</span> for your memory</h3>
