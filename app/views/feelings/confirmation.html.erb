@@ -15,7 +15,7 @@
       <div class="notice-container">
           <p><i class="fas fa-check-circle"></i>You paid to <span class="font-red">store!</span><br>Here's your receipt</p>
       </div>
-
+    <code>
       <div class="receipt">
         <h4>Piggybaku<br><span>Tokyo,Japan</span></h4>
         <p class="date"><%= @feeling.created_at.strftime("%d %b %Y") %></p>
@@ -24,6 +24,7 @@
         </div>
         <p class="total">TOTAL ¥<%= @feeling.price_cents %></p>
       </div>
+    </code>
     </div>
   </div>
   <div class="bottom-container">
